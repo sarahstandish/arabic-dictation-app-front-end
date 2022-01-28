@@ -62,7 +62,7 @@
   `SELECT * FROM table WHERE field LIKE '%a%';`
 
 # JavaScript and Unicode
-- Most JavaScript engines use UTF-16 encoding, but JS itself uses UTF-8 encoding?
+- JavaScript UTF-16 encoding internally, however, a JS sourcefile can have any kind of encoding and JS will convert it internally to UTF-16 before executingn it
 - Take care when accessing strings by index or counting characters in case some characters need more than one code unit to be represented.
 - Always think of strings in JS as a sequence of code units, rather than thinking of it the way the string on the screen is rendered.
 - Most Javascript string methods are not unicode-aware.  If your string contains compound unicode characters, take precautions when using myString.slice(), myString.substring(), etc
@@ -74,12 +74,20 @@
 - Watch out for string comparisons where the strings look visually the same but the code points are not the same; normalization handles this (but I'm not sure it has been relevant in Arabic so far).
   - `myString.normalize('form')` normalizes a string in accordance with the form chosen: NFC, NFD, NFKC, or NFKD; default is NFC if not passed a parameter.  When comparing, it may make more sense to 
 - Some potentially useful methods:
-  - `stringName.codePointAt(index)` // get the code point of a character, unicode aware
+  - `stringName.codePointAt(index)` // get the code point of a character, unicode aware -- will get the full code point even if dealing with surrogate pairs
   - `numberVar.toString(16)` // convert to string in hex
   - `String.fromCodePoint(number)` // convert a code point to a character
+  - `stringName.charCodeAt(index)` // get the code point of the character
   - Accessing string items by index / slicing is not necessarily unicode-aware, so there could be problems with accessing characters and their diacritics separately. The methods indexOf() and slice() are also not unicode-aware. (Since Arabic has no astral plane characters I don't think this will be a problem.)
+- "Only operations that are explicitly specified to be language or locale sensitive produce language-sensitive results." https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-type I'm not sure what this means! :/
+- Specify the encoding with one of three options, not sure what the difference is:
+  - `Content-Type: application/javascript; charset=utf-8`
+  - `<script src="./app.js" charset="utf-8">`
+  - `<meta charset="utf-8" />`
+- For strings, iterability is based on code points
 
 # Questions
+- If the default JS encoding is UTF-16, will that cause problems when translating to Python?  Or since my data is only speaking via the API, will it matter?  How could UTF-16 code points be transmitted via URL when there is no chance to transmit a byte-order mark?
 
 # Sources and resources:
 https://www.reedbeta.com/blog/programmers-intro-to-unicode/ (2017)
@@ -88,10 +96,10 @@ https://jkorpela.fi/unicode/guide.html
 https://docs.python.org/3/library/unicodedata.html#module-unicodedata
 https://docs.sqlalchemy.org/en/14/
 https://www.postgresql.org/docs/9.3/functions-matching.html
+https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
+
 
 # To read
-https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
-https://262.ecma-international.org/6.0/#sec-source-text
 https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-type
 
 # To Do
