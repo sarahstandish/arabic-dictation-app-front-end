@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./MenuForm.css";
 import LetterButtonList from "./LetterButtonList";
+import PropTypes from "prop-types";
 
-const MenuForm = ({ visibility }) => {
+const MenuForm = ({ visibility, changeVisibility }) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -79,9 +80,20 @@ const MenuForm = ({ visibility }) => {
     setAllLettersSelected(!allLettersSelected);
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    changeVisibility("menuForm");
+    console.log("You clicked submit");
+  };
+
+  // set visibility class of component
+  const visible = visibility ? "visible" : "invisible";
+
   return (
-    <form className={`MenuForm ${!visibility ? "invisible" : null}`}>
-      This is the Menu Form component
+    <form onSubmit={onSubmit} className={`MenuForm ${visible}`}>
+      <p className="instructions" id="select-letter-instructions">
+        Select three or more letters
+      </p>
       <LetterButtonList
         allLetters={allLetters}
         selectLetter={selectLetter}
@@ -89,8 +101,16 @@ const MenuForm = ({ visibility }) => {
         selectedLetters={selectedLetters}
         allLettersSelected={allLettersSelected}
       />
+      <button className="button" type="submit">
+        Submit
+      </button>
     </form>
   );
+};
+
+MenuForm.propTypes = {
+  changeVisibility: PropTypes.func.isRequired,
+  visibility: PropTypes.bool.isRequired,
 };
 
 export default MenuForm;

@@ -14,15 +14,14 @@ function App() {
     dictationForm: true,
   });
 
+  // change visibility of one or two components
   const changeVisibility = (component1, component2 = null) => {
-    // change visibility of one or two components
     const visibilityCopy = { ...visibility };
     visibilityCopy[component1] = !visibilityCopy[component1];
     if (component2) {
       visibilityCopy[component2] = !visibilityCopy[component2];
     }
     setVisibility(visibilityCopy);
-    console.log("Change visibility clicked");
   };
 
   return (
@@ -32,7 +31,10 @@ function App() {
         visibility={visibility["start"]}
         changeVisibility={changeVisibility}
       />
-      <MenuForm visibility={visibility["menuForm"]} />
+      <MenuForm
+        visibility={visibility["menuForm"]}
+        changeVisibility={changeVisibility}
+      />
       <DictationForm visibility={visibility["dictationForm"]} />
     </div>
   );
