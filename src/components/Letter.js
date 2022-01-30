@@ -2,12 +2,11 @@ import React from "react";
 import "./Letter.css";
 import PropTypes from "prop-types";
 
-const Letter = ({ key, letter }) => {
-  return <li>{letter}</li>;
+const Letter = ({ letter }) => {
+  return <li className="letter">{letter}</li>;
 };
 
 Letter.propTypes = {
-  key: PropTypes.number.isRequired,
   letter: PropTypes.string.isRequired,
 };
 

@@ -35,21 +35,16 @@ const LetterList = () => {
     "\u0629", // taa marbuuta
     "\u0649", // alif maqsuura
     "\u0623\u0625", // alif with hamza on top, alif with hamza on bottom
-    "\u0627\u064B", // tanween fatha
+    "\u064B\u0627", // tanween fatha
     "\u0621\u0624\u0626", // independent hamza, waw with hamza on top, yaa with hamza on top
     "\u0622", // alif medda
   ];
 
   const letterComponentList = allLetters.map((letter) => {
-    return <Letter key={letter.charCodeAt()} letter={letter} />;
+    return <Letter key={letter.charCodeAt(0)} letter={letter} />;
   });
 
-  return (
-    <ul className="letter-component-list">
-      This is the Letter List component
-      {letterComponentList}
-    </ul>
-  );
+  return <ul className="letter-component-list">{letterComponentList}</ul>;
 };
 
 export default LetterList;
