@@ -1,5 +1,6 @@
 * {
     --selected-color: lightgreen;
+    --hover-color: lightgray;
 }
 
 .letter {
@@ -14,7 +15,7 @@
 
 .letter:hover {
     cursor: pointer;
-    background-color: var(--selected-color);
+    background-color: var(--hover-color);
 }
 
 .selected {

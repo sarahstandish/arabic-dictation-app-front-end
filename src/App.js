@@ -5,7 +5,7 @@ import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
 
 function App() {
-  const [words, setWords] = useState([]);
+  // const [words, setWords] = useState([]);
 
   // visibility of each component
   const [visibility, setVisibility] = useState({

@@ -2,9 +2,9 @@ import React from "react";
 import "./Letter.css";
 import PropTypes from "prop-types";
 
-const Letter = ({ letter, onClick, selected }) => {
+const Letter = ({ letter, selectLetter, selected }) => {
   return (
-    <li className={`letter ${selected}`} onClick={() => onClick(letter)}>
+    <li className={`letter ${selected}`} onClick={() => selectLetter(letter)}>
       {letter}
     </li>
   );
@@ -12,8 +12,8 @@ const Letter = ({ letter, onClick, selected }) => {
 
 Letter.propTypes = {
   letter: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  selecte: PropTypes.string.isRequired,
+  selectLetter: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired,
 };
 
 export default Letter;
