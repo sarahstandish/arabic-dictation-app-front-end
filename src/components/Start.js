@@ -1,7 +1,8 @@
 import React from "react";
 import "./Start.css";
+import PropTypes from "prop-types";
 
-const Start = ({ visibility, onClick }) => {
+const Start = ({ visibility, changeVisibility }) => {
   return (
     <div className={`Start ${!visibility ? "invisible" : null}`}>
       <p className="app-description directions">
@@ -17,7 +18,7 @@ const Start = ({ visibility, onClick }) => {
         Recieve feedback on your attempt, and retry words you got wrong.
       </p>
       <button
-        onClick={() => onClick("start", "menuForm")}
+        onClick={() => changeVisibility("start", "menuForm")}
         id="start-button"
         className="button"
       >
@@ -25,6 +26,11 @@ const Start = ({ visibility, onClick }) => {
       </button>
     </div>
   );
+};
+
+Start.propTypes = {
+  visibility: PropTypes.bool.isRequired,
+  changeVisibility: PropTypes.func.isRequired,
 };
 
 export default Start;

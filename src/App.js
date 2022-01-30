@@ -28,7 +28,10 @@ function App() {
   return (
     <div className="App">
       <h1 id="app-title">Arabic Dictation App</h1>
-      <Start visibility={visibility["start"]} onClick={changeVisibility} />
+      <Start
+        visibility={visibility["start"]}
+        changeVisibility={changeVisibility}
+      />
       <MenuForm visibility={visibility["menuForm"]} />
       <DictationForm visibility={visibility["dictationForm"]} />
     </div>
