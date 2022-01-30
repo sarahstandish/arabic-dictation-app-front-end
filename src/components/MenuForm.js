@@ -2,12 +2,12 @@ import React from "react";
 import "./MenuForm.css";
 import LetterList from "./LetterList";
 
-const MenuForm = () => {
+const MenuForm = ({ visibility }) => {
   return (
-    <div>
+    <form className={`MenuForm ${!visibility ? "invisible" : null}`}>
       This is the Menu Form component
       <LetterList className="LetterList" />
-    </div>
+    </form>
   );
 };
 

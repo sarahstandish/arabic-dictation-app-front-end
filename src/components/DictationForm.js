@@ -3,9 +3,9 @@ import "./DictationForm.css";
 import PronounceWord from "./ProunounceWord.js";
 import InputForm from "./InputForm";
 
-const DictationForm = () => {
+const DictationForm = ({ visibility }) => {
   return (
-    <div>
+    <div className={`Start ${!visibility ? "invisible" : null}`}>
       This is the DictationForm
       <PronounceWord className="PronounceWord" />
       <InputForm className="InputForm" />
