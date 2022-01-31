@@ -81,7 +81,7 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    changeVisibility("menuForm");
+    changeVisibility("menuForm", "dictationForm");
 
     let letters = null;
     if (!allLettersSelected) {

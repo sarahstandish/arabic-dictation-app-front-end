@@ -37,7 +37,7 @@ function App() {
   const [visibility, setVisibility] = useState({
     start: true,
     menuForm: false,
-    dictationForm: true,
+    dictationForm: false,
   });
 
   // change visibility of one or two components
@@ -62,7 +62,10 @@ function App() {
         changeVisibility={changeVisibility}
         getWords={getWords}
       />
-      <DictationForm visibility={visibility["dictationForm"]} />
+      <DictationForm
+        visibility={visibility["dictationForm"]}
+        changeVisibility={changeVisibility}
+      />
     </div>
   );
 }

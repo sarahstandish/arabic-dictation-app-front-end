@@ -104,3 +104,5 @@ https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-typ
 
 # To Do
 - Error message when no words have been selected
+- Add button to Dictation form to go back to the selection  menu
+- Add mechanism to tee up current word, next word
