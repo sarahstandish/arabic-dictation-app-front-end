@@ -103,5 +103,4 @@ https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-uni
 https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-type
 
 # To Do
-- Error message or prevent submission when selecting fewer than 2 characters
 - Error message when no words have been selected
