@@ -3,9 +3,32 @@ import React, { useState } from "react";
 import DictationForm from "./components/DictationForm";
 import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
+import axios from "axios";
 
 function App() {
-  // const [words, setWords] = useState([]);
+  // the words to present to the user
+  const [words, setWords] = useState([]);
+
+  const [currWord, setCurrWord] = useState({});
+
+  const [nextWord, setNextWord] = useState({});
+
+  const [moreWordsAvailable, setMoreWordsAvailable] = useState(false);
+
+  // get words from api
+  const getWords = (letters = null) => {
+    let url = "https://arabic-dictation-api.herokuapp.com/words";
+    if (letters) {
+      url += `?letters=${letters}`;
+    }
+
+    console.log("Inside the getWords function");
+
+    axios
+      .get(url)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error.response.data));
+  };
 
   // visibility of each component
   const [visibility, setVisibility] = useState({
@@ -34,6 +57,7 @@ function App() {
       <MenuForm
         visibility={visibility["menuForm"]}
         changeVisibility={changeVisibility}
+        getWords={getWords}
       />
       <DictationForm visibility={visibility["dictationForm"]} />
     </div>

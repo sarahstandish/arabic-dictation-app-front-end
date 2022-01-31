@@ -3,7 +3,7 @@ import "./MenuForm.css";
 import LetterButtonList from "./LetterButtonList";
 import PropTypes from "prop-types";
 
-const MenuForm = ({ visibility, changeVisibility }) => {
+const MenuForm = ({ visibility, changeVisibility, getWords }) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -84,6 +84,7 @@ const MenuForm = ({ visibility, changeVisibility }) => {
     event.preventDefault();
     changeVisibility("menuForm");
     console.log("You clicked submit");
+    getWords();
   };
 
   // set visibility class of component
@@ -111,6 +112,7 @@ const MenuForm = ({ visibility, changeVisibility }) => {
 MenuForm.propTypes = {
   changeVisibility: PropTypes.func.isRequired,
   visibility: PropTypes.bool.isRequired,
+  getWords: PropTypes.func.isRequired,
 };
 
 export default MenuForm;
