@@ -15,18 +15,21 @@ function App() {
 
   const [moreWordsAvailable, setMoreWordsAvailable] = useState(false);
 
+  const [error, setError] = useState("");
+
   // get words from api
-  const getWords = (letters = null) => {
+  const getWords = (letters) => {
     let url = "https://arabic-dictation-api.herokuapp.com/words";
+    // letters passed as null if only base url should be used
     if (letters) {
       url += `?letters=${letters}`;
     }
-
-    console.log("Inside the getWords function");
-
     axios
       .get(url)
-      .then((response) => console.log(response.data))
+      .then((response) => {
+        setWords(response.data["words"]);
+        setMoreWordsAvailable(response.data["more_words_available"]);
+      })
       .catch((error) => console.log(error.response.data));
   };
 

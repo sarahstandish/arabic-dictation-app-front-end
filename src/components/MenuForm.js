@@ -76,15 +76,20 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
       setSelectedLetters(new Set());
     }
 
-    console.log("You clicked on 'all letters'");
     setAllLettersSelected(!allLettersSelected);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
     changeVisibility("menuForm");
-    console.log("You clicked submit");
-    getWords();
+
+    let letters = null;
+    if (!allLettersSelected) {
+      letters = Array.from(selectedLetters).reduce(
+        (str, curr) => (str += curr)
+      );
+    }
+    getWords(letters);
   };
 
   // set visibility class of component
