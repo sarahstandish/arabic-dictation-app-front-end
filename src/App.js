@@ -30,7 +30,7 @@ function App() {
         setWords(response.data["words"]);
         setMoreWordsAvailable(response.data["more_words_available"]);
       })
-      .catch((error) => console.log(error.response.data));
+      .catch((error) => setError(error.response.data["message"]));
   };
 
   // visibility of each component
