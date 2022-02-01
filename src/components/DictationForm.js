@@ -4,14 +4,15 @@ import PronounceWord from "./ProunounceWord.js";
 import InputForm from "./InputForm";
 import PropTypes from "prop-types";
 
-const DictationForm = ({ visibility, changeVisibility }) => {
+const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
   return (
     <div className={`Start ${!visibility ? "invisible" : null}`}>
-      This is the DictationForm
+      This is the DictationForm. The current word is {currWord["voweled_word"]}
       <PronounceWord className="PronounceWord" />
       <InputForm className="InputForm" />
+      <p className="error">{error}</p>
       <button
-        clasName="button"
+        className="button"
         id="change-letters-button"
         onClick={() => changeVisibility("dictationForm", "menuForm")}
       >
@@ -24,6 +25,8 @@ const DictationForm = ({ visibility, changeVisibility }) => {
 DictationForm.propTypes = {
   visibility: PropTypes.bool.isRequired,
   changeVisibility: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  currWord: PropTypes.object,
 };
 
 export default DictationForm;

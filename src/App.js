@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DictationForm from "./components/DictationForm";
 import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
@@ -11,7 +11,7 @@ function App() {
 
   const [currWord, setCurrWord] = useState({});
 
-  const [nextWord, setNextWord] = useState({});
+  // const [nextWord, setNextWord] = useState({});
 
   const [moreWordsAvailable, setMoreWordsAvailable] = useState(false);
 
@@ -27,11 +27,30 @@ function App() {
     axios
       .get(url)
       .then((response) => {
+        setCurrWord(response.data["words"].shift());
         setWords(response.data["words"]);
         setMoreWordsAvailable(response.data["more_words_available"]);
+        setError("");
       })
-      .catch((error) => setError(error.response.data["message"]));
+      .catch((error) => {
+        setError(error.response.data["message"]);
+        setWords([]);
+      });
   };
+
+  // const updateCurrWord = () => {
+  //   let wordsCopy = words;
+  //   let firstWord = wordsCopy.shift();
+  //   setCurrWord(firstWord);
+  //   setWords(wordsCopy);
+  // };
+
+  // const updateNextWord = () => {
+  //   let wordsCopy = words;
+  //   let firstWord = wordsCopy.shift();
+  //   setNextWord(firstWord);
+  //   setWords(wordsCopy);
+  // };
 
   // visibility of each component
   const [visibility, setVisibility] = useState({
@@ -65,6 +84,8 @@ function App() {
       <DictationForm
         visibility={visibility["dictationForm"]}
         changeVisibility={changeVisibility}
+        error={error}
+        currWord={currWord}
       />
     </div>
   );

@@ -103,6 +103,15 @@ https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-uni
 https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-type
 
 # To Do
-- Error message when no words have been selected
-- Add button to Dictation form to go back to the selection  menu
-- Add mechanism to tee up current word, next word
+- Add function to set current word
+- Add function to get sound file for current word
+- Add function to set next word
+- Add function to get sound file for next word
+- Set up Google Cloud to avoid surprise charges
+- When loaded, play sound file
+- Set component that will play sound file when clicked
+- Create input component
+- Create algorithm to check input
+- Update current word, next word when input is submitted
+- Search again if there are more words available
+- Show error message if no words were returned
