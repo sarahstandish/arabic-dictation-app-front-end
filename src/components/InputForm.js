@@ -16,7 +16,25 @@ const InputForm = ({ currWord }) => {
   };
 
   const isInvalidInput = () => {
-    return userInput.length < 1;
+    if (userInput.length < 1) {
+      return true;
+    }
+
+    // check for non-arabic characters
+    const lowestArabicCodePoint = parseInt("0600", 16);
+
+    const highestArabicCodePoint = parseInt("06FF", 16);
+
+    for (let char of userInput) {
+      if (
+        char.charCodeAt() < lowestArabicCodePoint ||
+        char.charCodeAt() > highestArabicCodePoint
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   };
 
   return (
