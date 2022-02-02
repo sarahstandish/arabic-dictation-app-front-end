@@ -7,9 +7,8 @@ import PropTypes from "prop-types";
 const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
   return (
     <div className={`Start ${!visibility ? "invisible" : null}`}>
-      This is the DictationForm. The current word is {currWord["voweled_word"]}
-      <PronounceWord className="PronounceWord" />
-      <InputForm className="InputForm" />
+      <PronounceWord currWord={currWord} />
+      <InputForm />
       <p className="error">{error}</p>
       <button
         className="button"

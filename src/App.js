@@ -11,8 +11,6 @@ function App() {
 
   const [currWord, setCurrWord] = useState({});
 
-  // const [nextWord, setNextWord] = useState({});
-
   const [moreWordsAvailable, setMoreWordsAvailable] = useState(false);
 
   const [error, setError] = useState("");
@@ -42,13 +40,6 @@ function App() {
   //   let wordsCopy = words;
   //   let firstWord = wordsCopy.shift();
   //   setCurrWord(firstWord);
-  //   setWords(wordsCopy);
-  // };
-
-  // const updateNextWord = () => {
-  //   let wordsCopy = words;
-  //   let firstWord = wordsCopy.shift();
-  //   setNextWord(firstWord);
   //   setWords(wordsCopy);
   // };
 

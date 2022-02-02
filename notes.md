@@ -97,10 +97,10 @@ https://docs.python.org/3/library/unicodedata.html#module-unicodedata
 https://docs.sqlalchemy.org/en/14/
 https://www.postgresql.org/docs/9.3/functions-matching.html
 https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
-
+https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 
 # To read
-https://262.ecma-international.org/6.0/#sec-ecmascript-language-types-string-type
+https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 
 # To Do
 - Add function to set current word
