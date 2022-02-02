@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./InputForm.css";
 import PropTypes from "prop-types";
 
-const InputForm = ({ currWord, updateSubmittedWord }) => {
+const InputForm = ({
+  currWord,
+  updateSubmittedWord,
+  visibility,
+  changeVisibility,
+}) => {
   const [userInput, setUserInput] = useState("");
 
   const changeUserInput = (event) => {
@@ -13,6 +18,7 @@ const InputForm = ({ currWord, updateSubmittedWord }) => {
     event.preventDefault();
     updateSubmittedWord(userInput);
     setUserInput("");
+    changeVisibility(["inputForm", "feedback"]);
     console.log("Checking your input...");
   };
 
@@ -39,8 +45,10 @@ const InputForm = ({ currWord, updateSubmittedWord }) => {
     return false;
   };
 
+  const visibilityClass = visibility["inputForm"] ? "visible" : "invisible";
+
   return (
-    <form onSubmit={onFormSubmit} className="InputForm">
+    <form onSubmit={onFormSubmit} className={`InputForm ${visibilityClass}`}>
       <p className="directions">Type the word you hear</p>
       <input
         className="arabic-user-input"
@@ -63,6 +71,8 @@ const InputForm = ({ currWord, updateSubmittedWord }) => {
 InputForm.propTypes = {
   currWord: PropTypes.object.isRequired,
   updateSubmittedWord: PropTypes.func.isRequired,
+  visibility: PropTypes.object.isRequired,
+  changeVisibility: PropTypes.func.isRequired,
 };
 
 export default InputForm;

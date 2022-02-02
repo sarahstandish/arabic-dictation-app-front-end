@@ -36,18 +36,20 @@ function App() {
       });
   };
 
-  // const updateCurrWord = () => {
-  //   let wordsCopy = words;
-  //   let firstWord = wordsCopy.shift();
-  //   setCurrWord(firstWord);
-  //   setWords(wordsCopy);
-  // };
+  const updateCurrWord = () => {
+    let wordsCopy = words;
+    let firstWord = wordsCopy.shift();
+    setCurrWord(firstWord);
+    setWords(wordsCopy);
+  };
 
   // visibility of each component
   const [visibility, setVisibility] = useState({
     start: true,
     menuForm: false,
     dictationForm: false,
+    pronounceWord: true,
+    inputForm: true,
     feedback: false,
   });
 
@@ -75,10 +77,11 @@ function App() {
         getWords={getWords}
       />
       <DictationForm
-        visibility={visibility["dictationForm"]}
+        visibility={visibility}
         changeVisibility={changeVisibility}
         error={error}
         currWord={currWord}
+        updateCurrWord={updateCurrWord}
       />
     </div>
   );

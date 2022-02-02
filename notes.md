@@ -105,6 +105,5 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 # To Do
 - Create input component
 - Create algorithm to check input
-- Update current word, next word when input is submitted
 - Search again if there are more words available
 - Show error message if no words were returned

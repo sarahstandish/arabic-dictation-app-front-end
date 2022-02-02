@@ -5,7 +5,13 @@ import InputForm from "./InputForm";
 import Feedback from "./Feedback";
 import PropTypes from "prop-types";
 
-const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
+const DictationForm = ({
+  visibility,
+  changeVisibility,
+  error,
+  currWord,
+  updateCurrWord,
+}) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
   const updateSubmittedWord = (word) => {
@@ -13,10 +19,17 @@ const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
     console.log("submitted word updated");
   };
 
+  const visibilityClass = visibility["dictationForm"] ? "visible" : "invisible";
+
   return (
-    <div className={`Start ${!visibility ? "invisible" : null}`}>
-      <PronounceWord currWord={currWord} />
+    <div className={`DictationForm ${visibilityClass}`}>
+      <PronounceWord
+        currWord={currWord}
+        visibility={visibility["pronounceWord"]}
+      />
       <InputForm
+        visibility={visibility}
+        changeVisibility={changeVisibility}
         currWord={currWord}
         updateSubmittedWord={updateSubmittedWord}
       />
@@ -28,16 +41,23 @@ const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
       >
         Change letters
       </button>
-      <Feedback currWord={currWord} submittedWord={submittedWord} />
+      <Feedback
+        visibility={visibility}
+        currWord={currWord}
+        submittedWord={submittedWord}
+        updateCurrWord={updateCurrWord}
+        changeVisibility={changeVisibility}
+      />
     </div>
   );
 };
 
 DictationForm.propTypes = {
-  visibility: PropTypes.bool.isRequired,
+  visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
   error: PropTypes.string,
   currWord: PropTypes.object,
+  updateCurrWord: PropTypes.func.isRequired,
 };
 
 export default DictationForm;
