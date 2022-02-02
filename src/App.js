@@ -48,14 +48,16 @@ function App() {
     start: true,
     menuForm: false,
     dictationForm: false,
+    feedback: false,
   });
 
-  // change visibility of one or two components
-  const changeVisibility = (component1, component2 = null) => {
+  // change visibility of components
+  const changeVisibility = (components) => {
+    console.log("change visibility clicked");
     const visibilityCopy = { ...visibility };
-    visibilityCopy[component1] = !visibilityCopy[component1];
-    if (component2) {
-      visibilityCopy[component2] = !visibilityCopy[component2];
+    for (let component of components) {
+      console.log("Component is", component);
+      visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);
   };

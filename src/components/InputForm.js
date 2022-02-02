@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./InputForm.css";
 import PropTypes from "prop-types";
 
-const InputForm = ({ currWord }) => {
+const InputForm = ({ currWord, updateSubmittedWord }) => {
   const [userInput, setUserInput] = useState("");
 
   const changeUserInput = (event) => {
@@ -11,11 +11,13 @@ const InputForm = ({ currWord }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    updateSubmittedWord(userInput);
     setUserInput("");
     console.log("Checking your input...");
   };
 
   const isInvalidInput = () => {
+    // cannot submit an empty field
     if (userInput.length < 1) {
       return true;
     }
@@ -39,8 +41,13 @@ const InputForm = ({ currWord }) => {
 
   return (
     <form onSubmit={onFormSubmit} className="InputForm">
-      <p class="directions">Type the word you hear</p>
-      <input type="text" value={userInput} onChange={changeUserInput}></input>
+      <p className="directions">Type the word you hear</p>
+      <input
+        className="arabic-user-input"
+        type="text"
+        value={userInput}
+        onChange={changeUserInput}
+      ></input>
       <button
         type="submit"
         className="button"
@@ -55,6 +62,7 @@ const InputForm = ({ currWord }) => {
 
 InputForm.propTypes = {
   currWord: PropTypes.object.isRequired,
+  updateSubmittedWord: PropTypes.func.isRequired,
 };
 
 export default InputForm;

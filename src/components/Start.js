@@ -18,7 +18,7 @@ const Start = ({ visibility, changeVisibility }) => {
         Recieve feedback on your attempt, and retry words you got wrong.
       </p>
       <button
-        onClick={() => changeVisibility("start", "menuForm")}
+        onClick={() => changeVisibility(["start", "menuForm"])}
         id="start-button"
         className="button"
       >
