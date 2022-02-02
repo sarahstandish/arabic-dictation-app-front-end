@@ -8,7 +8,7 @@ const DictationForm = ({ visibility, changeVisibility, error, currWord }) => {
   return (
     <div className={`Start ${!visibility ? "invisible" : null}`}>
       <PronounceWord currWord={currWord} />
-      <InputForm />
+      <InputForm currWord={currWord} />
       <p className="error">{error}</p>
       <button
         className="button"

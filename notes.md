@@ -98,18 +98,11 @@ https://docs.sqlalchemy.org/en/14/
 https://www.postgresql.org/docs/9.3/functions-matching.html
 https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
 https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
+Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 
 # To read
-https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 
 # To Do
-- Add function to set current word
-- Add function to get sound file for current word
-- Add function to set next word
-- Add function to get sound file for next word
-- Set up Google Cloud to avoid surprise charges
-- When loaded, play sound file
-- Set component that will play sound file when clicked
 - Create input component
 - Create algorithm to check input
 - Update current word, next word when input is submitted
