@@ -94,11 +94,11 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
 
   const validSelection = () => selectedLetters.size >= 3;
 
-  // set visibility class of component
-  const visible = visibility ? "visible" : "invisible";
-
   return (
-    <form onSubmit={onSubmit} className={`MenuForm ${visible}`}>
+    <form
+      onSubmit={onSubmit}
+      className={`MenuForm ${visibility.getClass("menuForm")}`}
+    >
       <p className="instructions" id="select-letter-instructions">
         Select three or more letters you want in your dictation words.
       </p>
@@ -118,7 +118,7 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
 
 MenuForm.propTypes = {
   changeVisibility: PropTypes.func.isRequired,
-  visibility: PropTypes.bool.isRequired,
+  visibility: PropTypes.object.isRequired,
   getWords: PropTypes.func.isRequired,
 };
 

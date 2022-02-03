@@ -44,10 +44,11 @@ const InputForm = ({
     return false;
   };
 
-  const visibilityClass = visibility["inputForm"] ? "visible" : "invisible";
-
   return (
-    <form onSubmit={onFormSubmit} className={`InputForm ${visibilityClass}`}>
+    <form
+      onSubmit={onFormSubmit}
+      className={`InputForm ${visibility.getClass("inputForm")}`}
+    >
       <p className="directions">
         Type the word you hear, without short vowels or <em>shadda</em>.
       </p>

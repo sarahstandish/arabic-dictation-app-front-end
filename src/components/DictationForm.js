@@ -18,14 +18,9 @@ const DictationForm = ({
     setSubmittedWord(word);
   };
 
-  const visibilityClass = visibility["dictationForm"] ? "visible" : "invisible";
-
   return (
-    <div className={`DictationForm ${visibilityClass}`}>
-      <PronounceWord
-        currWord={currWord}
-        visibility={visibility["pronounceWord"]}
-      />
+    <div className={`DictationForm ${visibility.getClass("dictationForm")}`}>
+      <PronounceWord currWord={currWord} visibility={visibility} />
       <InputForm
         visibility={visibility}
         changeVisibility={changeVisibility}

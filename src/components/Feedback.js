@@ -29,15 +29,13 @@ const Feedback = ({
     }
   };
 
-  const visibilityClass = visibility["feedback"] ? "visible" : "invisible";
-
   const getNextWord = () => {
     updateCurrWord();
     changeVisibility(["inputForm", "feedback"]);
   };
 
   return (
-    <div className={`feedback ${visibilityClass}`}>
+    <div className={`feedback ${visibility.getClass("feedback")}`}>
       <p>
         You wrote {submittedWord} and the correct word is {unvoweled_word}.
       </p>

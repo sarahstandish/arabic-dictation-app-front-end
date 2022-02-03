@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Start = ({ visibility, changeVisibility }) => {
   return (
-    <div className={`Start ${!visibility ? "invisible" : null}`}>
+    <div className={`Start ${visibility.getClass("start")}`}>
       <p className="app-description directions">
         Improve your knowledge of the Arabic alphabet.
       </p>
@@ -29,7 +29,7 @@ const Start = ({ visibility, changeVisibility }) => {
 };
 
 Start.propTypes = {
-  visibility: PropTypes.bool.isRequired,
+  visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
 };
 

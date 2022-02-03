@@ -42,7 +42,6 @@ function App() {
   const updateCurrWord = () => {
     if (words.length > 0) {
       // get a new current word, if there are words left
-      console.log("Updating current word");
       let wordsCopy = words;
       let firstWord = wordsCopy.shift();
       setCurrWord(firstWord);
@@ -50,17 +49,31 @@ function App() {
       setError("");
     } else if (words.length === 0 && moreWordsAvailable) {
       // search again
-      console.log("Fetching more words");
       getWords(searchLetters);
       setError("");
     } else if (words.length === 0 && !moreWordsAvailable) {
-      console.log("No more words available");
       // set an error message
+      setCurrWord({});
       setError(
         "There are no more words available with the selected letter combination."
       );
     }
   };
+
+  // input and pronounceWord should be invisible if there is an error, visible if not
+  useEffect(() => {
+    const visibilityCopy = { ...visibility };
+
+    if (error) {
+      visibilityCopy["pronounceWord"] = false;
+      visibilityCopy["inputForm"] = false;
+      setVisibility(visibilityCopy);
+    } else {
+      visibilityCopy["pronounceWord"] = true;
+      visibilityCopy["inputForm"] = true;
+      setVisibility(visibilityCopy);
+    }
+  }, [error]);
 
   // visibility of each component
   const [visibility, setVisibility] = useState({
@@ -70,6 +83,11 @@ function App() {
     pronounceWord: true,
     inputForm: true,
     feedback: false,
+    getClass: function (component) {
+      if (!this[component]) {
+        return "invisible";
+      }
+    },
   });
 
   // change visibility of components
@@ -84,12 +102,9 @@ function App() {
   return (
     <div className="App">
       <h1 id="app-title">Arabic Dictation App</h1>
-      <Start
-        visibility={visibility["start"]}
-        changeVisibility={changeVisibility}
-      />
+      <Start visibility={visibility} changeVisibility={changeVisibility} />
       <MenuForm
-        visibility={visibility["menuForm"]}
+        visibility={visibility}
         changeVisibility={changeVisibility}
         getWords={getWords}
       />
