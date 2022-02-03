@@ -15,8 +15,11 @@ function App() {
 
   const [error, setError] = useState("");
 
+  const [searchLetters, setSearchLetters] = useState("");
+
   // get words from api
   const getWords = (letters) => {
+    setSearchLetters(letters);
     let url = "https://arabic-dictation-api.herokuapp.com/words";
     // letters passed as null if only base url should be used
     if (letters) {
@@ -37,10 +40,26 @@ function App() {
   };
 
   const updateCurrWord = () => {
-    let wordsCopy = words;
-    let firstWord = wordsCopy.shift();
-    setCurrWord(firstWord);
-    setWords(wordsCopy);
+    if (words.length > 0) {
+      // get a new current word, if there are words left
+      console.log("Updating current word");
+      let wordsCopy = words;
+      let firstWord = wordsCopy.shift();
+      setCurrWord(firstWord);
+      setWords(wordsCopy);
+      setError("");
+    } else if (words.length === 0 && moreWordsAvailable) {
+      // search again
+      console.log("Fetching more words");
+      getWords(searchLetters);
+      setError("");
+    } else if (words.length === 0 && !moreWordsAvailable) {
+      console.log("No more words available");
+      // set an error message
+      setError(
+        "There are no more words available with the selected letter combination."
+      );
+    }
   };
 
   // visibility of each component
@@ -55,10 +74,8 @@ function App() {
 
   // change visibility of components
   const changeVisibility = (components) => {
-    console.log("change visibility clicked");
     const visibilityCopy = { ...visibility };
     for (let component of components) {
-      console.log("Component is", component);
       visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);

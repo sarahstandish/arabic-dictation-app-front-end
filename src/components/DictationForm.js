@@ -16,7 +16,6 @@ const DictationForm = ({
 
   const updateSubmittedWord = (word) => {
     setSubmittedWord(word);
-    console.log("submitted word updated");
   };
 
   const visibilityClass = visibility["dictationForm"] ? "visible" : "invisible";

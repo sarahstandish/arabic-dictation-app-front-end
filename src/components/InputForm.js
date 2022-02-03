@@ -19,7 +19,6 @@ const InputForm = ({
     updateSubmittedWord(userInput);
     setUserInput("");
     changeVisibility(["inputForm", "feedback"]);
-    console.log("Checking your input...");
   };
 
   const isInvalidInput = () => {
@@ -49,7 +48,9 @@ const InputForm = ({
 
   return (
     <form onSubmit={onFormSubmit} className={`InputForm ${visibilityClass}`}>
-      <p className="directions">Type the word you hear</p>
+      <p className="directions">
+        Type the word you hear, without short vowels or <em>shadda</em>.
+      </p>
       <input
         className="arabic-user-input"
         type="text"
