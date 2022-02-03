@@ -73,6 +73,7 @@ function App() {
       visibilityCopy["inputForm"] = true;
       setVisibility(visibilityCopy);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   // visibility of each component

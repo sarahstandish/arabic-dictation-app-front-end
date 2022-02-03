@@ -106,6 +106,3 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 - Create algorithm to check input
   - Display meaningful input
   - Add the word to the end of the input array if word was wrong
-  - Refactor 'visibility' prop everywhere for greater consistency
-  - Add function to get visibility, for greater consistency again?
-- Show error message if no words were returned or if words were exhausted

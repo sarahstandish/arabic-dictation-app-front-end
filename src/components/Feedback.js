@@ -15,16 +15,53 @@ const Feedback = ({
   // place each letter in an array as an object showing whether is was correct or incorrect
 
   const checkUserInput = () => {
+    const feedbackArr = [];
+
     if (submittedWord === unvoweled_word) {
       console.log("All correct!");
+      for (let char in submittedWord) {
+        feedbackArr.push({
+          char: char,
+          status: "correct",
+        });
+      }
+      console.log(feedbackArr);
+      return feedbackArr;
     }
+    // I'm thinking...
+    // get a set of the letters in each word
+    // make sure they are in the right order
+    // by iterating over each word
+    // finding the first letter that is in the set in the correct word
+    // then finding that letter in the submitted word
+    // marking other letters incorrect
 
-    const wordEvaluation = [];
+    let correctWordIndex = 0;
+    let submittedWordIndex = 0;
 
-    let i = 0;
-    let j = 0;
-    while (i < unvoweled_word.length) {
-      if (unvoweled_word[i] === submittedWord[i]) {
+    while (correctWordIndex < unvoweled_word.length) {
+      let correctChar = unvoweled_word[correctWordIndex];
+      let sumbittedChar = submittedWord[submittedWordIndex];
+      if (correctChar === sumbittedChar) {
+        feedbackArr.push({
+          char: sumbittedChar,
+          status: "correct",
+        });
+        correctWordIndex++;
+        submittedWordIndex++;
+      } else if (correctChar in submittedWord) {
+        feedbackArr.push({
+          char: sumbittedChar,
+          status: "incorrect",
+        });
+        submittedWordIndex++;
+      } else {
+        feedbackArr.push({
+          char: sumbittedChar,
+          status: "incorrect",
+        });
+        submittedWordIndex++;
+        correctWordIndex++;
       }
     }
   };
