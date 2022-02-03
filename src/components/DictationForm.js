@@ -11,6 +11,7 @@ const DictationForm = ({
   error,
   currWord,
   updateCurrWord,
+  recycleWord,
 }) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
@@ -20,6 +21,13 @@ const DictationForm = ({
 
   return (
     <div className={`DictationForm ${visibility.getClass("dictationForm")}`}>
+      <button
+        className="button"
+        id="change-letters-button"
+        onClick={() => changeVisibility(["dictationForm", "menuForm"])}
+      >
+        Change letters
+      </button>
       <PronounceWord currWord={currWord} visibility={visibility} />
       <InputForm
         visibility={visibility}
@@ -28,19 +36,14 @@ const DictationForm = ({
         updateSubmittedWord={updateSubmittedWord}
       />
       <p className="error">{error}</p>
-      <button
-        className="button"
-        id="change-letters-button"
-        onClick={() => changeVisibility(["dictationForm", "menuForm"])}
-      >
-        Change letters
-      </button>
+
       <Feedback
         visibility={visibility}
         currWord={currWord}
         submittedWord={submittedWord}
         updateCurrWord={updateCurrWord}
         changeVisibility={changeVisibility}
+        recycleWord={recycleWord}
       />
     </div>
   );
@@ -52,6 +55,7 @@ DictationForm.propTypes = {
   error: PropTypes.string,
   currWord: PropTypes.object,
   updateCurrWord: PropTypes.func.isRequired,
+  recycleWord: PropTypes.func.isRequired,
 };
 
 export default DictationForm;
