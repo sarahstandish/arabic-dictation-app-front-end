@@ -2,6 +2,7 @@ import React from "react";
 import "./Feedback.css";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
+import FeedbackLetter from "./FeedbackLetter";
 
 const Feedback = ({
   currWord,
@@ -55,6 +56,33 @@ const Feedback = ({
     return feedbackArr;
   };
 
+  const getCorrectWordArr = () => {
+    const diacritics = new Set([
+      "\u0650", // kesra
+      "\u064F", // damma
+      "\u064E", // fatha
+      "\u0651", // shadda
+      "\u0652", // sukuun
+      "\u0670", // dagger alif
+    ]);
+    const correctWordArr = [];
+    for (let char of voweled_word) {
+      if (diacritics.has(char)) {
+        correctWordArr.push({
+          char: char,
+          status: "diacritic",
+        });
+      } else {
+        correctWordArr.push({
+          char: char,
+          status: "correct",
+        });
+      }
+    }
+    console.log(correctWordArr);
+    return correctWordArr;
+  };
+
   const getNextWord = () => {
     updateCurrWord(currWordCorrect());
     changeVisibility(["inputForm", "feedback"]);
@@ -67,6 +95,9 @@ const Feedback = ({
       </p>
       {submittedWord.length > 0 && (
         <FeedbackLetterList wordArr={getFeedbackArr()} />
+      )}
+      {submittedWord.length > 0 && (
+        <FeedbackLetterList wordArr={getCorrectWordArr()} />
       )}
       <button className="button" id="next-word-button" onClick={getNextWord}>
         Next Word
