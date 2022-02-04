@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FeedbackLetter from "./FeedbackLetter";
+import "./FeedbackLetterList.css";
 
 const FeedbackLetterList = ({ wordArr }) => {
   const letterComponentList = wordArr.map((letter, index) => {
