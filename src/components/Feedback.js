@@ -83,6 +83,29 @@ const Feedback = ({
     return correctWordArr;
   };
 
+  const getEvaluation = () => {
+    if (currWordCorrect()) {
+      return "Perfect!";
+    }
+
+    const feedbackArr = getFeedbackArr();
+    let incorrect = 0;
+
+    for (let letter of feedbackArr) {
+      if (letter.status === "incorrect") {
+        incorrect += 1;
+      }
+    }
+
+    const percent_incorrect = incorrect / feedbackArr.length;
+
+    if (percent_incorrect < 0.25) {
+      return "Close!";
+    } else if (percent_incorrect < 0.5) {
+      return "Partly there.";
+    }
+  };
+
   const getNextWord = () => {
     updateCurrWord(currWordCorrect());
     changeVisibility(["inputForm", "feedback"]);
@@ -90,12 +113,14 @@ const Feedback = ({
 
   return (
     <div className={`feedback ${visibility.getClass("feedback")}`}>
-      <p>
-        You wrote {submittedWord} and the correct word is {unvoweled_word}.
+      <p className="feedback-p evaluation">
+        {submittedWord.length > 0 && getEvaluation()}
       </p>
+      <p classname="feedback-p">You wrote:</p>
       {submittedWord.length > 0 && (
         <FeedbackLetterList wordArr={getFeedbackArr()} />
       )}
+      <p className="feedback-p">The word was:</p>
       {submittedWord.length > 0 && (
         <FeedbackLetterList wordArr={getCorrectWordArr()} />
       )}

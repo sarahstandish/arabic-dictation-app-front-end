@@ -103,7 +103,6 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 # To read
 
 # To Do
-- Create algorithm to check input
-  - Display meaningful feedback
-- Create LetterList component
-- Create Letter component
+- Give a word feedback on performance
+- Highlight letters that need to be corrected in correct word
+- Something to show the page is loading
