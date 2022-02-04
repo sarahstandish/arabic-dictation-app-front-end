@@ -103,6 +103,6 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 # To read
 
 # To Do
-- Give a word feedback on performance
-- Highlight letters that need to be corrected in correct word
 - Something to show the page is loading
+- Highlight missed letters in correct word feedback
+- Input "keyboard"
