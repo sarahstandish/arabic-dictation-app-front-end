@@ -39,10 +39,16 @@ function App() {
       });
   };
 
-  const updateCurrWord = () => {
+  const updateCurrWord = (currWordCorrect) => {
+    console.log("Updating current word");
+    let wordsCopy = words;
+
+    // push the current word back on to the end of the words array if the user got it wrong
+    if (!currWordCorrect) {
+      wordsCopy.push(currWord);
+    }
     if (words.length > 0) {
       // get a new current word, if there are words left
-      let wordsCopy = words;
       let firstWord = wordsCopy.shift();
       setCurrWord(firstWord);
       setWords(wordsCopy);

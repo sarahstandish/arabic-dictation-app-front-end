@@ -11,7 +11,6 @@ const DictationForm = ({
   error,
   currWord,
   updateCurrWord,
-  recycleWord,
 }) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
@@ -43,7 +42,6 @@ const DictationForm = ({
         submittedWord={submittedWord}
         updateCurrWord={updateCurrWord}
         changeVisibility={changeVisibility}
-        recycleWord={recycleWord}
       />
     </div>
   );
@@ -55,7 +53,6 @@ DictationForm.propTypes = {
   error: PropTypes.string,
   currWord: PropTypes.object,
   updateCurrWord: PropTypes.func.isRequired,
-  recycleWord: PropTypes.func.isRequired,
 };
 
 export default DictationForm;

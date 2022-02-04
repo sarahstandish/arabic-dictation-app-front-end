@@ -11,63 +11,51 @@ const Feedback = ({
 }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
-  // I could loop through each letter of the correct word
-  // place each letter in an array as an object showing whether is was correct or incorrect
+  const currWordCorrect = () => {
+    return submittedWord === unvoweled_word;
+  };
 
-  const checkUserInput = () => {
-    const feedbackArr = [];
+  const getFeedbackArr = (unvoweled_word, submittedWord) => {
+    const submittedWordFeedbackArr = [];
 
-    if (submittedWord === unvoweled_word) {
-      console.log("All correct!");
-      for (let char in submittedWord) {
-        feedbackArr.push({
-          char: char,
-          status: "correct",
-        });
+    if (submittedWord.length < unvoweled_word.length) {
+      const diff = unvoweled_word.length - submittedWord.length;
+      for (let i = 0; i < diff; i++) {
+        submittedWord += "_";
       }
-      console.log(feedbackArr);
-      return feedbackArr;
     }
-    // I'm thinking...
-    // get a set of the letters in each word
-    // make sure they are in the right order
-    // by iterating over each word
-    // finding the first letter that is in the set in the correct word
-    // then finding that letter in the submitted word
-    // marking other letters incorrect
 
-    let correctWordIndex = 0;
-    let submittedWordIndex = 0;
-
-    while (correctWordIndex < unvoweled_word.length) {
-      let correctChar = unvoweled_word[correctWordIndex];
-      let sumbittedChar = submittedWord[submittedWordIndex];
+    for (let i = 0; i < unvoweled_word.length; i++) {
+      let correctChar = unvoweled_word[i];
+      let sumbittedChar = submittedWord[i];
       if (correctChar === sumbittedChar) {
-        feedbackArr.push({
+        submittedWordFeedbackArr.push({
           char: sumbittedChar,
           status: "correct",
         });
-        correctWordIndex++;
-        submittedWordIndex++;
-      } else if (correctChar in submittedWord) {
-        feedbackArr.push({
-          char: sumbittedChar,
-          status: "incorrect",
-        });
-        submittedWordIndex++;
       } else {
-        feedbackArr.push({
+        submittedWordFeedbackArr.push({
           char: sumbittedChar,
           status: "incorrect",
         });
-        submittedWordIndex++;
-        correctWordIndex++;
       }
     }
+
+    if (submittedWord.length > unvoweled_word.length) {
+      for (let i = unvoweled_word.length; i < submittedWord.length; i++) {
+        let sumbittedChar = submittedWord[i];
+
+        submittedWordFeedbackArr.push({
+          char: sumbittedChar,
+          status: "incorrect",
+        });
+      }
+    }
+    return submittedWordFeedbackArr;
   };
 
   const getNextWord = () => {
-    updateCurrWord();
+    updateCurrWord(currWordCorrect());
     changeVisibility(["inputForm", "feedback"]);
   };
 

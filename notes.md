@@ -104,5 +104,6 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 
 # To Do
 - Create algorithm to check input
-  - Display meaningful input
-  - Add the word to the end of the input array if word was wrong
+  - Display meaningful feedback
+- Create LetterList component
+- Create Letter component
