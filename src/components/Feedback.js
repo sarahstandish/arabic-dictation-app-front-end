@@ -114,16 +114,12 @@ const Feedback = ({
   return (
     <div className={`feedback ${visibility.getClass("feedback")}`}>
       <p className="feedback-p evaluation">
-        {submittedWord.length > 0 && getEvaluation()}
+        {submittedWord && getEvaluation()}
       </p>
       <p classname="feedback-p">You wrote:</p>
-      {submittedWord.length > 0 && (
-        <FeedbackLetterList wordArr={getFeedbackArr()} />
-      )}
+      {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
       <p className="feedback-p">The word was:</p>
-      {submittedWord.length > 0 && (
-        <FeedbackLetterList wordArr={getCorrectWordArr()} />
-      )}
+      {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
       <button className="button" id="next-word-button" onClick={getNextWord}>
         Next Word
       </button>
