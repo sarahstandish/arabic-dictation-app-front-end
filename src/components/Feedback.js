@@ -1,6 +1,7 @@
 import React from "react";
 import "./Feedback.css";
 import PropTypes from "prop-types";
+import FeedbackLetterList from "./FeedbackLetterList";
 
 const Feedback = ({
   currWord,
@@ -15,8 +16,8 @@ const Feedback = ({
     return submittedWord === unvoweled_word;
   };
 
-  const getFeedbackArr = (unvoweled_word, submittedWord) => {
-    const submittedWordFeedbackArr = [];
+  const getFeedbackArr = () => {
+    const feedbackArr = [];
 
     if (submittedWord.length < unvoweled_word.length) {
       const diff = unvoweled_word.length - submittedWord.length;
@@ -29,12 +30,12 @@ const Feedback = ({
       let correctChar = unvoweled_word[i];
       let sumbittedChar = submittedWord[i];
       if (correctChar === sumbittedChar) {
-        submittedWordFeedbackArr.push({
+        feedbackArr.push({
           char: sumbittedChar,
           status: "correct",
         });
       } else {
-        submittedWordFeedbackArr.push({
+        feedbackArr.push({
           char: sumbittedChar,
           status: "incorrect",
         });
@@ -45,13 +46,13 @@ const Feedback = ({
       for (let i = unvoweled_word.length; i < submittedWord.length; i++) {
         let sumbittedChar = submittedWord[i];
 
-        submittedWordFeedbackArr.push({
+        feedbackArr.push({
           char: sumbittedChar,
           status: "incorrect",
         });
       }
     }
-    return submittedWordFeedbackArr;
+    return feedbackArr;
   };
 
   const getNextWord = () => {
@@ -64,6 +65,9 @@ const Feedback = ({
       <p>
         You wrote {submittedWord} and the correct word is {unvoweled_word}.
       </p>
+      {submittedWord.length > 0 && (
+        <FeedbackLetterList wordArr={getFeedbackArr()} />
+      )}
       <button className="button" id="next-word-button" onClick={getNextWord}>
         Next Word
       </button>
