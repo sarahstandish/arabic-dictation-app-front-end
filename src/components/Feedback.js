@@ -2,7 +2,6 @@ import React from "react";
 import "./Feedback.css";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
-import FeedbackLetter from "./FeedbackLetter";
 
 const Feedback = ({
   currWord,
@@ -116,7 +115,7 @@ const Feedback = ({
       <p className="feedback-p evaluation">
         {submittedWord && getEvaluation()}
       </p>
-      <p classname="feedback-p">You wrote:</p>
+      <p className="feedback-p">You wrote:</p>
       {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
       <p className="feedback-p">The word was:</p>
       {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}

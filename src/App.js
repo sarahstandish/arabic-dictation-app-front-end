@@ -17,6 +17,27 @@ function App() {
 
   const [searchLetters, setSearchLetters] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
+  // visibility of each component
+  const [visibility, setVisibility] = useState({
+    start: true,
+    menuForm: false,
+    dictationForm: false,
+    pronounceWord: true,
+    inputForm: true,
+    feedback: false,
+    getClass: function (component) {
+      if (!this[component]) {
+        return "invisible";
+      }
+    },
+  });
+
+  const loadingOn = () => {
+    setLoading(true);
+  };
+
   // get words from api
   const getWords = (letters) => {
     setSearchLetters(letters);
@@ -25,6 +46,7 @@ function App() {
     if (letters) {
       url += `?letters=${letters}`;
     }
+    console.log("I'm inside getWords, outside of the API call");
     axios
       .get(url)
       .then((response) => {
@@ -32,10 +54,15 @@ function App() {
         setWords(response.data["words"]);
         setMoreWordsAvailable(response.data["more_words_available"]);
         setError("");
+        // show dictation form if currently invisible
+        console.log("I'm inside getWords and the API call just happened.");
+        changeVisibility(["menuForm", "dictationForm"]);
+        setLoading(false);
       })
       .catch((error) => {
         setError(error.response.data["message"]);
         setWords([]);
+        setLoading(false);
       });
   };
 
@@ -82,25 +109,15 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
-  // visibility of each component
-  const [visibility, setVisibility] = useState({
-    start: true,
-    menuForm: false,
-    dictationForm: false,
-    pronounceWord: true,
-    inputForm: true,
-    feedback: false,
-    getClass: function (component) {
-      if (!this[component]) {
-        return "invisible";
-      }
-    },
-  });
-
   // change visibility of components
   const changeVisibility = (components) => {
     const visibilityCopy = { ...visibility };
     for (let component of components) {
+      console.log(
+        `Changing the visibility of ${component} from ${
+          visibilityCopy[component]
+        } to ${!visibilityCopy[component]}`
+      );
       visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);
@@ -109,12 +126,18 @@ function App() {
   return (
     <div className="App">
       <h1 id="app-title">Arabic Dictation App</h1>
-      <Start visibility={visibility} changeVisibility={changeVisibility} />
-      <MenuForm
+      <Start
         visibility={visibility}
         changeVisibility={changeVisibility}
-        getWords={getWords}
+        loading={loading}
       />
+      <MenuForm
+        visibility={visibility}
+        getWords={getWords}
+        loading={loading}
+        loadingOn={loadingOn}
+      />
+      {/* {loading && <Spinner />} */}
       <DictationForm
         visibility={visibility}
         changeVisibility={changeVisibility}

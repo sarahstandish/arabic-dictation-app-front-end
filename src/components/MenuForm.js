@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./MenuForm.css";
 import LetterButtonList from "./LetterButtonList";
 import PropTypes from "prop-types";
+import Spinner from "./Spinner";
 
-const MenuForm = ({ visibility, changeVisibility, getWords }) => {
+const MenuForm = ({ visibility, getWords, loading, loadingOn }) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -81,8 +82,7 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    changeVisibility(["menuForm", "dictationForm"]);
-
+    loadingOn();
     let letters = null;
     if (!allLettersSelected) {
       letters = Array.from(selectedLetters).reduce(
@@ -97,7 +97,7 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
   return (
     <form
       onSubmit={onSubmit}
-      className={`MenuForm ${visibility.getClass("menuForm")}`}
+      className={`menu-form ${visibility.getClass("menuForm")}`}
     >
       <p className="instructions" id="select-letter-instructions">
         Select three or more letters you want in your dictation words.
@@ -109,6 +109,7 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
         selectedLetters={selectedLetters}
         allLettersSelected={allLettersSelected}
       />
+      {loading && <Spinner />}
       <button className="button" type="submit" disabled={!validSelection()}>
         Submit
       </button>
@@ -117,9 +118,10 @@ const MenuForm = ({ visibility, changeVisibility, getWords }) => {
 };
 
 MenuForm.propTypes = {
-  changeVisibility: PropTypes.func.isRequired,
   visibility: PropTypes.object.isRequired,
   getWords: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  loadingOn: PropTypes.func.isRequired,
 };
 
 export default MenuForm;
