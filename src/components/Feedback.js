@@ -7,8 +7,8 @@ const Feedback = ({
   currWord,
   submittedWord,
   visibility,
-  updateCurrWord,
   changeVisibility,
+  getNextWord,
 }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
@@ -105,10 +105,6 @@ const Feedback = ({
     }
   };
 
-  const getNextWord = () => {
-    updateCurrWord(currWordCorrect());
-  };
-
   return (
     <div className={`feedback ${visibility.getClass("feedback")}`}>
       <p className="feedback-p evaluation">
@@ -118,7 +114,11 @@ const Feedback = ({
       {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
       <p className="feedback-p">The word was:</p>
       {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
-      <button className="button" id="next-word-button" onClick={getNextWord}>
+      <button
+        className="button"
+        id="next-word-button"
+        onClick={() => getNextWord(currWordCorrect())}
+      >
         Next Word
       </button>
     </div>
@@ -129,7 +129,7 @@ Feedback.propTypes = {
   currWord: PropTypes.object.isRequired,
   submittedWord: PropTypes.string,
   visibility: PropTypes.object.isRequired,
-  updateCurrWord: PropTypes.func.isRequired,
+  getNextWord: PropTypes.func.isRequired,
   changeVisibility: PropTypes.func.isRequired,
 };
 

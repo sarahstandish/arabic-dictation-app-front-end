@@ -10,7 +10,7 @@ const DictationForm = ({
   changeVisibility,
   error,
   currWord,
-  updateCurrWord,
+  getNextWord,
 }) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
@@ -39,7 +39,7 @@ const DictationForm = ({
           visibility={visibility}
           currWord={currWord}
           submittedWord={submittedWord}
-          updateCurrWord={updateCurrWord}
+          getNextWord={getNextWord}
           changeVisibility={changeVisibility}
         />
       )}
@@ -52,7 +52,7 @@ DictationForm.propTypes = {
   changeVisibility: PropTypes.func.isRequired,
   error: PropTypes.string,
   currWord: PropTypes.object,
-  updateCurrWord: PropTypes.func.isRequired,
+  getNextWord: PropTypes.func.isRequired,
 };
 
 export default DictationForm;

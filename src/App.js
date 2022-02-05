@@ -72,7 +72,7 @@ function App() {
       });
   };
 
-  const updateCurrWord = (currWordCorrect) => {
+  const getNextWord = (currWordCorrect) => {
     console.log("Updating current word");
     let wordsCopy = words;
 
@@ -137,7 +137,7 @@ function App() {
         changeVisibility={changeVisibility}
         error={error}
         currWord={currWord}
-        updateCurrWord={updateCurrWord}
+        getNextWord={getNextWord}
       />
       <ErrorScreen
         visibility={visibility}
