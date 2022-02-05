@@ -34,15 +34,15 @@ const DictationForm = ({
         currWord={currWord}
         updateSubmittedWord={updateSubmittedWord}
       />
-      <p className="error">{error}</p>
-
-      <Feedback
-        visibility={visibility}
-        currWord={currWord}
-        submittedWord={submittedWord}
-        updateCurrWord={updateCurrWord}
-        changeVisibility={changeVisibility}
-      />
+      {currWord.hasOwnProperty("unvoweled_word") && (
+        <Feedback
+          visibility={visibility}
+          currWord={currWord}
+          submittedWord={submittedWord}
+          updateCurrWord={updateCurrWord}
+          changeVisibility={changeVisibility}
+        />
+      )}
     </div>
   );
 };

@@ -107,7 +107,6 @@ const Feedback = ({
 
   const getNextWord = () => {
     updateCurrWord(currWordCorrect());
-    changeVisibility(["inputForm", "feedback"]);
   };
 
   return (

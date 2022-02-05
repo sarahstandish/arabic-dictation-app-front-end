@@ -4,6 +4,7 @@ import DictationForm from "./components/DictationForm";
 import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
 import axios from "axios";
+import ErrorScreen from "./components/ErrorScreen";
 
 function App() {
   // the words to present to the user
@@ -27,9 +28,12 @@ function App() {
     pronounceWord: true,
     inputForm: true,
     feedback: false,
+    errorScreen: false,
     getClass: function (component) {
       if (!this[component]) {
         return "invisible";
+      } else {
+        return "visible";
       }
     },
   });
@@ -57,11 +61,13 @@ function App() {
         // show dictation form if currently invisible
         console.log("I'm inside getWords and the API call just happened.");
         changeVisibility(["menuForm", "dictationForm"]);
-        setLoading(false);
       })
       .catch((error) => {
         setError(error.response.data["message"]);
         setWords([]);
+        changeVisibility(["menuForm", "errorScreen"]);
+      })
+      .finally(() => {
         setLoading(false);
       });
   };
@@ -80,34 +86,23 @@ function App() {
       setCurrWord(firstWord);
       setWords(wordsCopy);
       setError("");
+      changeVisibility(["inputForm", "feedback"]);
     } else if (words.length === 0 && moreWordsAvailable) {
       // search again
       getWords(searchLetters);
       setError("");
+      changeVisibility(["inputForm", "feedback"]);
     } else if (words.length === 0 && !moreWordsAvailable) {
       // set an error message
       setCurrWord({});
       setError(
         "There are no more words available with the selected letter combination."
       );
+      console.log("No more words so I should show the error screen");
+      changeVisibility(["dictationForm", "errorScreen"]);
+      console.log("Hopefully the error screen is showing");
     }
   };
-
-  // input and pronounceWord should be invisible if there is an error, visible if not
-  useEffect(() => {
-    const visibilityCopy = { ...visibility };
-
-    if (error) {
-      visibilityCopy["pronounceWord"] = false;
-      visibilityCopy["inputForm"] = false;
-      setVisibility(visibilityCopy);
-    } else {
-      visibilityCopy["pronounceWord"] = true;
-      visibilityCopy["inputForm"] = true;
-      setVisibility(visibilityCopy);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [error]);
 
   // change visibility of components
   const changeVisibility = (components) => {
@@ -137,13 +132,17 @@ function App() {
         loading={loading}
         loadingOn={loadingOn}
       />
-      {/* {loading && <Spinner />} */}
       <DictationForm
         visibility={visibility}
         changeVisibility={changeVisibility}
         error={error}
         currWord={currWord}
         updateCurrWord={updateCurrWord}
+      />
+      <ErrorScreen
+        visibility={visibility}
+        error={error}
+        changeVisibility={changeVisibility}
       />
     </div>
   );

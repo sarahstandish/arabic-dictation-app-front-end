@@ -103,6 +103,6 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 # To read
 
 # To Do
-- Something to show the page is loading
 - Highlight missed letters in correct word feedback
 - Input "keyboard"
+- Update API error message "no results matched your search"
