@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Carme&family=Noto+Naskh+Arabic:wght@400;500&family=Vujahday+Script&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --background-color: #F1F2F6;;
+  --text-color: #25554A;
+  --accent-color-1: #56638A;
+  --title-font: 'Vujahday Script', cursive;
+  --body-font: 'Carme', sans-serif;
+  --arabic-font: 'Noto Naskh Arabic', serif;
+}
+
+h1 {
+  font-family: var(--title-font);
+}
+
+p {
+  font-family: var(--body-font);
+}
+
+.arabic {
+  font-family: var(--arabic-font)
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +31,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {

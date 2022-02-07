@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 
 const Letter = ({ letter, selectLetter, selected }) => {
   return (
-    <li className={`letter ${selected}`} onClick={() => selectLetter(letter)}>
+    <li
+      className={`letter arabic ${selected}`}
+      onClick={() => selectLetter(letter)}
+    >
       {letter}
     </li>
   );

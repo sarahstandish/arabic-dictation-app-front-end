@@ -102,7 +102,25 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 
 # To read
 
-# To Do
-- Highlight missed letters in correct word feedback
+# To Do - functionality
+- Highlight missed letters in correct word feedback??
 - Input "keyboard"
+- Add 'about' page
+- Add slower button or record all words more slowly
+- On desktop, automatically focus on 'next' button?
+
+# To Do - styles
+- Pick color scheme
+- Background image for start page?
+- Pick new font
+  - Arabic text: Noto Naskh Arabic
+  - English text: Carme
+  - Title: Bad Script
 - Update API error message "no results matched your search"
+- Change order of feedback to show correct word first
+- Re-center menu
+- Add icons to buttons instead of words
+- Check mobile visibility
+- Add animated transitions
+  - Animate feedback to show correct word, then sumbmitted word
+  - Animate menu to dissolve/fade away after searching
