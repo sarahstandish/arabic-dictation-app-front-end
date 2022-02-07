@@ -20,4 +20,6 @@ input {
     border-radius: 5px;
     border: 1px solid var(--accent-color-1);
     outline: none;
+    background-color: var(--text-color);
+    color: var(--background-color)
 }

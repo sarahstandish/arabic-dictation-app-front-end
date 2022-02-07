@@ -1,11 +1,20 @@
+* {
+    --correct-color: #15A0A2;
+    --incorrect-color: #FE4A49;
+    --diacritic-color: var(--text-color);
+}
+
+/* light blue option: #008DB8 pretty promising */ 
+/* bright blue option: 2667FF */
+
 .correct {
-    color: green
+    color: var(--correct-color)
 }
 
 .incorrect {
-    color: red;
+    color: var(--incorrect-color);
 }
 
 .diacritic {
-    color: black;
+    color: var(--diacritic-color);
 }

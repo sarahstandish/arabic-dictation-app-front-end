@@ -1,23 +1,21 @@
-* {
-    --selected-color: lightgreen;
-    --hover-color: lightgray;
-}
-
 .letter {
     margin: 5px;
     padding-bottom: 5px;
     padding-top: 5px;
     font-size: x-large;
-    border: 1px solid black;
+    border: 1px solid var(--accent-color-1);
     border-radius: 5%;
-    width: 45px
+    width: 45px;
+    color: var(--text-color)
 }
 
 .letter:hover {
     cursor: pointer;
-    background-color: var(--hover-color);
+    background-color: var(--accent-color-1);
+    color: var(--background-color)
 }
 
 .selected {
-    background-color: var(--selected-color);
+    background-color: var(--accent-color-1);
+    color: var(--background-color)
 }
