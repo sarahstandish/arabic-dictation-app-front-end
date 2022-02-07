@@ -3,13 +3,7 @@ import "./Feedback.css";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
 
-const Feedback = ({
-  currWord,
-  submittedWord,
-  visibility,
-  changeVisibility,
-  getNextWord,
-}) => {
+const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
   const currWordCorrect = () => {
@@ -130,7 +124,6 @@ Feedback.propTypes = {
   submittedWord: PropTypes.string,
   visibility: PropTypes.object.isRequired,
   getNextWord: PropTypes.func.isRequired,
-  changeVisibility: PropTypes.func.isRequired,
 };
 
 export default Feedback;

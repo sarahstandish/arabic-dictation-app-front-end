@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 const DictationForm = ({
   visibility,
   changeVisibility,
-  error,
   currWord,
   getNextWord,
 }) => {
@@ -40,7 +39,6 @@ const DictationForm = ({
           currWord={currWord}
           submittedWord={submittedWord}
           getNextWord={getNextWord}
-          changeVisibility={changeVisibility}
         />
       )}
     </div>
@@ -50,7 +48,6 @@ const DictationForm = ({
 DictationForm.propTypes = {
   visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
-  error: PropTypes.string,
   currWord: PropTypes.object,
   getNextWord: PropTypes.func.isRequired,
 };

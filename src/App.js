@@ -108,11 +108,6 @@ function App() {
   const changeVisibility = (components) => {
     const visibilityCopy = { ...visibility };
     for (let component of components) {
-      console.log(
-        `Changing the visibility of ${component} from ${
-          visibilityCopy[component]
-        } to ${!visibilityCopy[component]}`
-      );
       visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);
@@ -135,7 +130,6 @@ function App() {
       <DictationForm
         visibility={visibility}
         changeVisibility={changeVisibility}
-        error={error}
         currWord={currWord}
         getNextWord={getNextWord}
       />
