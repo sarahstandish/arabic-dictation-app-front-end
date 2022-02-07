@@ -47,7 +47,7 @@ const InputForm = ({
   return (
     <form
       onSubmit={onFormSubmit}
-      className={`InputForm ${visibility.getClass("inputForm")}`}
+      className={`input-form ${visibility.getClass("inputForm")}`}
     >
       <p className="directions">
         Type the word you hear, without short vowels or <em>shadda</em>.

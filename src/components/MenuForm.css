@@ -1,3 +1,9 @@
 .menu-form {
-    position: relative
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    height: 75%;
+    align-items: center;
+    justify-content: space-evenly;
 }

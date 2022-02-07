@@ -1,0 +1,11 @@
+.start {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 90%;
+    justify-content: space-around;
+    font-size: larger;
+    line-height: 170%;
+  }

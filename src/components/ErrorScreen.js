@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./ErrorScreen.css";
 
 const ErrorScreen = ({ error, changeVisibility, visibility }) => {
   return (
-    <div className={`error ${visibility.getClass("errorScreen")}`}>
+    <div className={`error-screen ${visibility.getClass("errorScreen")}`}>
       <p className="error">{error}</p>
       <button
         className="button"

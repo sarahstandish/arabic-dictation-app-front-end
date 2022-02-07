@@ -104,10 +104,11 @@ const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
       <p className="feedback-p evaluation">
         {submittedWord && getEvaluation()}
       </p>
-      <p className="feedback-p">You wrote:</p>
-      {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
       <p className="feedback-p">The word was:</p>
       {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
+      <p className="feedback-p">You wrote:</p>
+      {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
+
       <button
         className="button"
         id="next-word-button"

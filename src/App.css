@@ -12,12 +12,19 @@
   --arabic-font: 'Noto Naskh Arabic', serif;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 h1 {
   font-family: var(--title-font);
+  margin: 15px;
 }
 
 p {
   font-family: var(--body-font);
+  font-size: larger;
+  line-height: 170%;
 }
 
 .arabic {
@@ -25,25 +32,42 @@ p {
 }
 
 .App {
+  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+/* button styling */
+
+button {
+  width: 75px;
+  height: 50px;
 }
 
-.button:hover {
+button:hover {
   cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.invisible {
+  display: none !important;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
+*/
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -52,21 +76,4 @@ p {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.invisible {
-  display: none;
-}
+}  */

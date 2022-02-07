@@ -18,7 +18,7 @@ const DictationForm = ({
   };
 
   return (
-    <div className={`DictationForm ${visibility.getClass("dictationForm")}`}>
+    <div className={`dictation-form ${visibility.getClass("dictationForm")}`}>
       <button
         className="button"
         id="change-letters-button"

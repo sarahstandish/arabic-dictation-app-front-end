@@ -1,5 +1,4 @@
 .letter-component-list {
-    max-width: 500px;
     list-style: none;
     display: flex;
     flex-direction: row-reverse;

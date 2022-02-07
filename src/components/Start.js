@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Start = ({ visibility, changeVisibility }) => {
   return (
-    <div className={`Start ${visibility.getClass("start")}`}>
+    <div className={`start ${visibility.getClass("start")}`}>
       <p className="app-description directions">
         Improve your knowledge of the Arabic alphabet.
       </p>
