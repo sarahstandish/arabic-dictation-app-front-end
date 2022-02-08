@@ -99,13 +99,8 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   };
 
   return (
-<<<<<<< HEAD
     <div className="feedback">
       <p className="feedback-p evaluation">
-=======
-    <div className={`feedback ${visibility.getClass("feedback")}`}>
-      <p className="feedback-p" id="evaluation">
->>>>>>> styles
         {submittedWord && getEvaluation()}
       </p>
       <div id="the-word-was">
