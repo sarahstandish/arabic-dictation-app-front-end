@@ -8,12 +8,15 @@ const Start = ({ visibility, changeVisibility }) => {
       <p className="app-description directions">
         Improve your knowledge of the Arabic alphabet.
       </p>
+      <i class="far fa-hand-pointer"></i>
       <p className="app-description directions">
         Select the Arabic letters you know or want to practice.
       </p>
+      <i class="fas fa-volume-up"></i>
       <p className="app-description directions">
         Listen to a word composed of those letters, and type what you hear.
       </p>
+      <i class="far fa-keyboard"></i>
       <p className="app-description directions">
         Recieve feedback on your attempt, and retry words you got wrong.
       </p>

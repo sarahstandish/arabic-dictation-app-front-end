@@ -9,3 +9,8 @@
     font-size: larger;
     line-height: 170%;
   }
+
+.start i {
+  font-size: x-large;
+  color: var(--accent-color-1);
+}

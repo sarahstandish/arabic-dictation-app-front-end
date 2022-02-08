@@ -47,9 +47,9 @@ p {
 
 /* button styling */
 
-button {
+/* button {
   all: unset;
-  width: 75px;
+  width: 125px;
   height: 50px;
   background-color: var(--accent-color-1);
   border-radius: 5px;
@@ -59,17 +59,39 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: var(--accent-color-1)
-}
+  background-color: var(--text-color)
+} */
 
 button:disabled {
   background-color: lightgray;
   color: gray;
+  border: none;
 }
 
 button:disabled:hover {
   cursor: default;
+  background-color: lightgray;
+  color: gray;
 }
+
+/* alternate button styling */
+button {
+  all: unset;
+  width: 125px;
+  height: 50px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  border: 1px solid var(--accent-color-1);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--accent-color-1);
+  color: var(--background-color);
+}
+
 
 .invisible {
   display: none !important;

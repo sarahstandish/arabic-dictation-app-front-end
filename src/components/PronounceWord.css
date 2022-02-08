@@ -1,0 +1,8 @@
+#pronounce-word-button {
+    font-size: x-large;
+    color: var(--accent-color-1);
+}
+
+#pronounce-word-button:hover {
+    color: var(--background-color)
+}

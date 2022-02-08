@@ -7,3 +7,11 @@
     width: 90%;
     justify-content: space-evenly;
   }
+
+/* #change-letters-button {
+  background-color: var(--text-color);
+}
+
+#change-letters-button:hover {
+  background-color: var(--accent-color-1);
+} */

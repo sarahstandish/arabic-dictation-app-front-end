@@ -111,7 +111,7 @@ const MenuForm = ({ visibility, getWords, loading, loadingOn }) => {
       />
       {loading && <Spinner />}
       <button className="button" type="submit" disabled={!validSelection()}>
-        Submit
+        Go
       </button>
     </form>
   );
