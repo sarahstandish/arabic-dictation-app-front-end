@@ -2,9 +2,9 @@ import "./ErrorScreen.css";
 import React from "react";
 import PropTypes from "prop-types";
 
-const ErrorScreen = ({ error, changeVisibility, visibility, focusHere }) => {
+const ErrorScreen = ({ error, changeVisibility, focusHere }) => {
   return (
-    <div className={`error-screen ${visibility.getClass("errorScreen")}`}>
+    <div className="error-screen">
       <p className="error">{error}</p>
       <button
         className="button"
@@ -21,7 +21,6 @@ const ErrorScreen = ({ error, changeVisibility, visibility, focusHere }) => {
 ErrorScreen.propTypes = {
   error: PropTypes.string.isRequired,
   changeVisibility: PropTypes.func.isRequired,
-  visibility: PropTypes.object.isRequired,
   focusHere: PropTypes.func.isRequired,
 };
 

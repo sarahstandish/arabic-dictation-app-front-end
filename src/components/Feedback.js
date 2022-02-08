@@ -3,13 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
 
-const Feedback = ({
-  currWord,
-  submittedWord,
-  visibility,
-  getNextWord,
-  focusHere,
-}) => {
+const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
   const currWordCorrect = () => {
@@ -105,7 +99,7 @@ const Feedback = ({
   };
 
   return (
-    <div className={`feedback ${visibility.getClass("feedback")}`}>
+    <div className="feedback">
       <p className="feedback-p evaluation">
         {submittedWord && getEvaluation()}
       </p>
@@ -129,7 +123,6 @@ const Feedback = ({
 Feedback.propTypes = {
   currWord: PropTypes.object.isRequired,
   submittedWord: PropTypes.string,
-  visibility: PropTypes.object.isRequired,
   getNextWord: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };

@@ -4,7 +4,7 @@ import LetterButtonList from "./LetterButtonList";
 import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 
-const MenuForm = ({ visibility, getWords, loading, loadingOn, focusHere }) => {
+const MenuForm = ({ getWords, loading, loadingOn, focusHere }) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -93,10 +93,7 @@ const MenuForm = ({ visibility, getWords, loading, loadingOn, focusHere }) => {
   const validSelection = () => selectedLetters.size >= 3;
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className={`menu-form ${visibility.getClass("menuForm")}`}
-    >
+    <form onSubmit={onSubmit} className="menu-form">
       <p className="instructions" id="select-letter-instructions">
         Select three or more letters you want in your dictation words.
       </p>
@@ -121,7 +118,6 @@ const MenuForm = ({ visibility, getWords, loading, loadingOn, focusHere }) => {
 };
 
 MenuForm.propTypes = {
-  visibility: PropTypes.object.isRequired,
   getWords: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   loadingOn: PropTypes.func.isRequired,

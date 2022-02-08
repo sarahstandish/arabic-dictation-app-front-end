@@ -2,9 +2,9 @@ import "./Start.css";
 import React from "react";
 import PropTypes from "prop-types";
 
-const Start = ({ visibility, changeVisibility, focusHere }) => {
+const Start = ({ changeVisibility, focusHere }) => {
   return (
-    <div className={`start ${visibility.getClass("start")}`} tabIndex={0}>
+    <div className="start">
       <p className="app-description directions">
         Improve your knowledge of the Arabic alphabet.
       </p>
@@ -33,7 +33,6 @@ const Start = ({ visibility, changeVisibility, focusHere }) => {
 };
 
 Start.propTypes = {
-  visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };

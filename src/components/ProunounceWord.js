@@ -2,7 +2,7 @@ import "./PronounceWord.css";
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
-const PronounceWord = ({ currWord, visibility }) => {
+const PronounceWord = ({ currWord }) => {
   // audioplayer
   // useRef will give you the same object on every render
   // mutating the .current property doesn't cause a rerender
@@ -13,7 +13,8 @@ const PronounceWord = ({ currWord, visibility }) => {
   };
 
   return (
-    <div className={`PronounceWord ${visibility.getClass("pronounceWord")}`}>
+    // <div className={`PronounceWord ${visibility.getClass("pronounceWord")}`}>
+    <div className="pronounce-word">
       <audio
         ref={audioPlayer} // React will set the ref's .current property to the corresponding DOM node whenever that node changes
         autoPlay
@@ -29,7 +30,6 @@ const PronounceWord = ({ currWord, visibility }) => {
 
 PronounceWord.propTypes = {
   currWord: PropTypes.object.isRequired,
-  visibility: PropTypes.object.isRequired,
 };
 
 export default PronounceWord;

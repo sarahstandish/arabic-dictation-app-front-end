@@ -29,13 +29,6 @@ function App() {
     inputForm: true,
     feedback: false,
     errorScreen: false,
-    getClass: function (component) {
-      if (!this[component]) {
-        return "invisible";
-      } else {
-        return "visible";
-      }
-    },
   });
 
   const loadingOn = () => {
@@ -117,40 +110,40 @@ function App() {
     }
   }, []);
 
-  const onEnter = (event) => {
-    console.log("Inside on enter");
-    console.log(event.key);
-  };
-
   return (
     <div className="App">
       <h1 id="app-title">Arabic Dictation App</h1>
-      <Start
-        visibility={visibility}
-        changeVisibility={changeVisibility}
-        loading={loading}
-        focusHere={focusHere}
-      />
-      <MenuForm
-        visibility={visibility}
-        getWords={getWords}
-        loading={loading}
-        loadingOn={loadingOn}
-        focusHere={focusHere}
-      />
-      <DictationForm
-        visibility={visibility}
-        changeVisibility={changeVisibility}
-        currWord={currWord}
-        getNextWord={getNextWord}
-        focusHere={focusHere}
-      />
-      <ErrorScreen
-        visibility={visibility}
-        error={error}
-        changeVisibility={changeVisibility}
-        focusHere={focusHere}
-      />
+      {visibility.start && (
+        <Start
+          changeVisibility={changeVisibility}
+          loading={loading}
+          focusHere={focusHere}
+        />
+      )}
+      {visibility.menuForm && (
+        <MenuForm
+          getWords={getWords}
+          loading={loading}
+          loadingOn={loadingOn}
+          focusHere={focusHere}
+        />
+      )}
+      {visibility.dictationForm && (
+        <DictationForm
+          visibility={visibility}
+          changeVisibility={changeVisibility}
+          currWord={currWord}
+          getNextWord={getNextWord}
+          focusHere={focusHere}
+        />
+      )}
+      {visibility.errorScreen && (
+        <ErrorScreen
+          error={error}
+          changeVisibility={changeVisibility}
+          focusHere={focusHere}
+        />
+      )}
     </div>
   );
 }

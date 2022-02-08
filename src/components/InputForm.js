@@ -2,13 +2,7 @@ import "./InputForm.css";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const InputForm = ({
-  currWord,
-  updateSubmittedWord,
-  visibility,
-  changeVisibility,
-  focusHere,
-}) => {
+const InputForm = ({ updateSubmittedWord, changeVisibility, focusHere }) => {
   const [userInput, setUserInput] = useState("");
 
   const changeUserInput = (event) => {
@@ -46,10 +40,7 @@ const InputForm = ({
   };
 
   return (
-    <form
-      onSubmit={onFormSubmit}
-      className={`input-form ${visibility.getClass("inputForm")}`}
-    >
+    <form className="input-form" onSubmit={onFormSubmit}>
       <p className="directions">
         Type the word you hear, without short vowels or <em>shadda</em>.
       </p>
@@ -73,9 +64,7 @@ const InputForm = ({
 };
 
 InputForm.propTypes = {
-  currWord: PropTypes.object.isRequired,
   updateSubmittedWord: PropTypes.func.isRequired,
-  visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };

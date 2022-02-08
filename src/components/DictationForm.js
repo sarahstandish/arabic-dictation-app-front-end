@@ -19,7 +19,7 @@ const DictationForm = ({
   };
 
   return (
-    <div className={`dictation-form ${visibility.getClass("dictationForm")}`}>
+    <div className="dictation=form">
       <button
         className="button"
         id="change-letters-button"
@@ -27,17 +27,17 @@ const DictationForm = ({
       >
         Change letters
       </button>
-      <PronounceWord currWord={currWord} visibility={visibility} />
-      <InputForm
-        visibility={visibility}
-        changeVisibility={changeVisibility}
-        currWord={currWord}
-        updateSubmittedWord={updateSubmittedWord}
-        focusHere={focusHere}
-      />
-      {currWord.hasOwnProperty("unvoweled_word") && (
+      {visibility.pronounceWord && <PronounceWord currWord={currWord} />}
+      {visibility.inputForm && (
+        <InputForm
+          changeVisibility={changeVisibility}
+          currWord={currWord}
+          updateSubmittedWord={updateSubmittedWord}
+          focusHere={focusHere}
+        />
+      )}
+      {visibility.feedback && (
         <Feedback
-          visibility={visibility}
           currWord={currWord}
           submittedWord={submittedWord}
           getNextWord={getNextWord}
