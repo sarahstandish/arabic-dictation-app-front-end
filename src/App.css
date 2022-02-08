@@ -47,34 +47,6 @@ p {
 
 /* button styling */
 
-/* button {
-  all: unset;
-  width: 125px;
-  height: 50px;
-  background-color: var(--accent-color-1);
-  border-radius: 5px;
-  color: var(--background-color);
-  font-family: var(--body-font)
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: var(--text-color)
-} */
-
-button:disabled {
-  background-color: lightgray;
-  color: gray;
-  border: none;
-}
-
-button:disabled:hover {
-  cursor: default;
-  background-color: lightgray;
-  color: gray;
-}
-
-/* alternate button styling */
 button {
   all: unset;
   width: 125px;
@@ -92,24 +64,19 @@ button:hover {
   color: var(--background-color);
 }
 
+button:disabled {
+  visibility: hidden;
+}
+
+button:disabled:hover {
+  visibility: hidden;
+}
+
+
+
+/* hide elements */
 
 .invisible {
   display: none !important;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-*/
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}  */
