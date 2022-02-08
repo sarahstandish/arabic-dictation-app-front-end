@@ -110,17 +110,8 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 - On desktop, automatically focus on 'next' button?
 
 # To Do - styles
-- Pick color scheme
-- Background image for start page?
-- Pick new font
-  - Arabic text: Noto Naskh Arabic
-  - English text: Carme
-  - Title: Bad Script
 - Update API error message "no results matched your search"
-- Change order of feedback to show correct word first
-- Re-center menu
-- Add icons to buttons instead of words
 - Check mobile visibility
 - Add animated transitions
-  - Animate feedback to show correct word, then sumbmitted word
   - Animate menu to dissolve/fade away after searching
+- Change Arabic font to one that isn't insane when displaying لا
