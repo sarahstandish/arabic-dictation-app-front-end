@@ -92,28 +92,32 @@ const MenuForm = ({ getWords, loading, loadingOn, focusHere }) => {
 
   const validSelection = () => selectedLetters.size >= 3;
 
+  const fadeOutTime = loading ? "time-to-fade" : null;
+
   return (
-    <form onSubmit={onSubmit} className="menu-form">
-      <p className="instructions" id="select-letter-instructions">
-        Select three or more letters you want in your dictation words.
-      </p>
-      <LetterButtonList
-        allLetters={allLetters}
-        selectLetter={selectLetter}
-        selectAllLetters={selectAllLetters}
-        selectedLetters={selectedLetters}
-        allLettersSelected={allLettersSelected}
-      />
+    <div className="menu-form-container">
       {loading && <Spinner />}
-      <button
-        className="button"
-        type="submit"
-        disabled={!validSelection()}
-        ref={focusHere}
-      >
-        Go
-      </button>
-    </form>
+      <form onSubmit={onSubmit} className={`menu-form ${fadeOutTime}`}>
+        <p className="instructions" id="select-letter-instructions">
+          Select three or more letters you want in your dictation words.
+        </p>
+        <LetterButtonList
+          allLetters={allLetters}
+          selectLetter={selectLetter}
+          selectAllLetters={selectAllLetters}
+          selectedLetters={selectedLetters}
+          allLettersSelected={allLettersSelected}
+        />
+        <button
+          className="button"
+          type="submit"
+          disabled={!validSelection()}
+          ref={focusHere}
+        >
+          Go
+        </button>
+      </form>
+    </div>
   );
 };
 

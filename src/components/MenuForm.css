@@ -1,5 +1,9 @@
-.menu-form {
+.menu-form-container {
     position: relative;
+
+}
+
+.menu-form {
     display: flex;
     flex-direction: column;
     max-width: 90%;
@@ -7,4 +11,9 @@
     align-items: center;
     justify-content: space-evenly;
     animation: fadeIn var(--default-fade-in-len);
+}
+
+.time-to-fade {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
 }
