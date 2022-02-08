@@ -6,4 +6,5 @@
     height: 75%;
     align-items: center;
     justify-content: space-evenly;
+    animation: fadeIn var(--default-fade-in-len);
 }

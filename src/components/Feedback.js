@@ -99,15 +99,23 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="feedback">
       <p className="feedback-p evaluation">
+=======
+    <div className={`feedback ${visibility.getClass("feedback")}`}>
+      <p className="feedback-p" id="evaluation">
+>>>>>>> styles
         {submittedWord && getEvaluation()}
       </p>
-      <p className="feedback-p">The word was</p>
-      {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
-      <p className="feedback-p">You wrote</p>
-      {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
-
+      <div id="the-word-was">
+        <p className="feedback-p">The word was</p>
+        {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
+      </div>
+      <div id="you-wrote">
+        <p className="feedback-p">You wrote</p>
+        {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
+      </div>
       <button
         className="button"
         id="next-word-button"

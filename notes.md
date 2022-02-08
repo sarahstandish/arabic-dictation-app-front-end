@@ -113,9 +113,16 @@ https://blog.maisie.ink/react-ref-autofocus/
 
 # To Do - styles
 - Update API error message "no results matched your search"
+<<<<<<< HEAD
+=======
+- Check mobile visibility
+>>>>>>> styles
 - Add animated transitions
-  - Animate feedback to show correct word, then sumbmitted word
   - Animate menu to dissolve/fade away after searching
+<<<<<<< HEAD
 - Solve mystery of font not loading
 - set overflow:scroll on the app
 - set min-height and max-height on the app
+=======
+- Change Arabic font to one that isn't insane when displaying لا
+>>>>>>> styles
