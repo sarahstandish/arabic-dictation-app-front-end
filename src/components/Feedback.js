@@ -92,9 +92,9 @@ const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
 
     const percent_incorrect = incorrect / feedbackArr.length;
 
-    if (percent_incorrect < 0.25) {
+    if (percent_incorrect <= 0.25) {
       return "Close!";
-    } else if (percent_incorrect < 0.5) {
+    } else if (percent_incorrect <= 0.5) {
       return "Partly there.";
     }
   };
