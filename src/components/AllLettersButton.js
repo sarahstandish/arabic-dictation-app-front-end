@@ -1,5 +1,5 @@
-import React from "react";
 import "./AllLettersButton.css";
+import React from "react";
 import PropTypes from "prop-types";
 
 const AllLettersButton = ({ selectAllLetters, allLettersSelected }) => {

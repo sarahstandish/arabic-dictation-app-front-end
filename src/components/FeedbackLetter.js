@@ -1,6 +1,6 @@
+import "./FeedbackLetter.css";
 import React from "react";
 import PropTypes from "prop-types";
-import "./FeedbackLetter.css";
 
 const FeedbackLetter = ({ letter }) => {
   const { char, status } = letter;

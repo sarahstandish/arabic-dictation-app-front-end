@@ -1,5 +1,5 @@
-import React from "react";
 import "./Letter.css";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Letter = ({ letter, selectLetter, selected }) => {

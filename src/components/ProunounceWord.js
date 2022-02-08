@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
 import "./PronounceWord.css";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
 const PronounceWord = ({ currWord, visibility }) => {

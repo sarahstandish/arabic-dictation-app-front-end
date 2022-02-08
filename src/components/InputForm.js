@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import "./InputForm.css";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const InputForm = ({
