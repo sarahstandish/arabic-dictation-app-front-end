@@ -98,7 +98,7 @@ https://docs.sqlalchemy.org/en/14/
 https://www.postgresql.org/docs/9.3/functions-matching.html
 https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
 https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
-Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
+https://blog.maisie.ink/react-ref-autofocus/
 
 # To read
 
@@ -108,19 +108,13 @@ Helpful YouTube video: https://www.youtube.com/watch?v=sqpg1qzJCGQ
 - Add 'about' page
 - Add slower button or record all words more slowly
 - On desktop, automatically focus on 'next' button?
+- Major bug! fix the series of events that happens when the API re-fetches new words, or runs out of words
 
 # To Do - styles
-- Pick color scheme
-- Background image for start page?
-- Pick new font
-  - Arabic text: Noto Naskh Arabic
-  - English text: Carme
-  - Title: Bad Script
 - Update API error message "no results matched your search"
-- Change order of feedback to show correct word first
-- Re-center menu
-- Add icons to buttons instead of words
-- Check mobile visibility
 - Add animated transitions
   - Animate feedback to show correct word, then sumbmitted word
   - Animate menu to dissolve/fade away after searching
+- Solve mystery of font not loading
+- set overflow:scroll on the app
+- set min-height and max-height on the app

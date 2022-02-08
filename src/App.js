@@ -50,7 +50,6 @@ function App() {
     if (letters) {
       url += `?letters=${letters}`;
     }
-    console.log("I'm inside getWords, outside of the API call");
     axios
       .get(url)
       .then((response) => {
@@ -59,8 +58,9 @@ function App() {
         setMoreWordsAvailable(response.data["more_words_available"]);
         setError("");
         // show dictation form if currently invisible
-        console.log("I'm inside getWords and the API call just happened.");
-        changeVisibility(["menuForm", "dictationForm"]);
+        if (visibility["menuForm"]) {
+          changeVisibility(["menuForm", "dictationForm"]);
+        }
       })
       .catch((error) => {
         setError(error.response.data["message"]);
@@ -73,7 +73,6 @@ function App() {
   };
 
   const getNextWord = (currWordCorrect) => {
-    console.log("Updating current word");
     let wordsCopy = words;
 
     // push the current word back on to the end of the words array if the user got it wrong
@@ -98,9 +97,7 @@ function App() {
       setError(
         "There are no more words available with the selected letter combination."
       );
-      console.log("No more words so I should show the error screen");
       changeVisibility(["dictationForm", "errorScreen"]);
-      console.log("Hopefully the error screen is showing");
     }
   };
 

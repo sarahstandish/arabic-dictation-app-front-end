@@ -49,8 +49,6 @@ const MenuForm = ({ visibility, getWords, loading, loadingOn }) => {
   const [allLettersSelected, setAllLettersSelected] = useState(false);
 
   const selectLetter = (letter) => {
-    console.log("You clicked on the letter", letter);
-
     const selectedLettersCopy = new Set(selectedLetters);
 
     // if the letter is in the set, delete it
