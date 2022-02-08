@@ -6,3 +6,18 @@
     height: 75%;
     justify-content: space-evenly;
   }
+
+#evaluation {
+  animation: fadeIn 1s;
+}
+#the-word-was {
+  animation: fadeIn 1s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+#you-wrote {
+  animation: fadeIn 1s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}

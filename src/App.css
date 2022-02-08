@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Carme&family=Noto+Naskh+Arabic:wght@400;500&family=Della+Respira&display=swap");
 
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +21,7 @@
   --title-font: 'Della Respira', serif;
   --body-font: 'Carme', sans-serif;
   --arabic-font: 'Noto Naskh Arabic', serif;
+  --default-fade-in-len: .2s;
 }
 
 html, body, #root {
@@ -71,8 +82,6 @@ button:disabled {
 button:disabled:hover {
   visibility: hidden;
 }
-
-
 
 /* hide elements */
 
