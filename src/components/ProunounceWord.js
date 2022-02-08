@@ -21,7 +21,7 @@ const PronounceWord = ({ currWord, visibility }) => {
         type="audio/mp3"
       ></audio>
       <button onClick={playAudio} className="button" id="pronounce-word-button">
-        <i class="fas fa-volume-up"></i>
+        <i className="fas fa-volume-up"></i>
       </button>
     </div>
   );

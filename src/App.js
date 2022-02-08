@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import DictationForm from "./components/DictationForm";
 import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
@@ -110,6 +110,18 @@ function App() {
     setVisibility(visibilityCopy);
   };
 
+  const focusHere = useCallback((inputElement) => {
+    if (inputElement) {
+      inputElement.focus();
+      console.log("Focus is now on ", inputElement);
+    }
+  }, []);
+
+  const onEnter = (event) => {
+    console.log("Inside on enter");
+    console.log(event.key);
+  };
+
   return (
     <div className="App">
       <h1 id="app-title">Arabic Dictation App</h1>
@@ -117,23 +129,27 @@ function App() {
         visibility={visibility}
         changeVisibility={changeVisibility}
         loading={loading}
+        focusHere={focusHere}
       />
       <MenuForm
         visibility={visibility}
         getWords={getWords}
         loading={loading}
         loadingOn={loadingOn}
+        focusHere={focusHere}
       />
       <DictationForm
         visibility={visibility}
         changeVisibility={changeVisibility}
         currWord={currWord}
         getNextWord={getNextWord}
+        focusHere={focusHere}
       />
       <ErrorScreen
         visibility={visibility}
         error={error}
         changeVisibility={changeVisibility}
+        focusHere={focusHere}
       />
     </div>
   );

@@ -7,6 +7,7 @@ const InputForm = ({
   updateSubmittedWord,
   visibility,
   changeVisibility,
+  focusHere,
 }) => {
   const [userInput, setUserInput] = useState("");
 
@@ -57,6 +58,7 @@ const InputForm = ({
         type="text"
         value={userInput}
         onChange={changeUserInput}
+        ref={focusHere}
       ></input>
       <button
         type="submit"
@@ -75,6 +77,7 @@ InputForm.propTypes = {
   updateSubmittedWord: PropTypes.func.isRequired,
   visibility: PropTypes.object.isRequired,
   changeVisibility: PropTypes.func.isRequired,
+  focusHere: PropTypes.func.isRequired,
 };
 
 export default InputForm;

@@ -10,6 +10,7 @@ const DictationForm = ({
   changeVisibility,
   currWord,
   getNextWord,
+  focusHere,
 }) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
@@ -32,6 +33,7 @@ const DictationForm = ({
         changeVisibility={changeVisibility}
         currWord={currWord}
         updateSubmittedWord={updateSubmittedWord}
+        focusHere={focusHere}
       />
       {currWord.hasOwnProperty("unvoweled_word") && (
         <Feedback
@@ -39,6 +41,7 @@ const DictationForm = ({
           currWord={currWord}
           submittedWord={submittedWord}
           getNextWord={getNextWord}
+          focusHere={focusHere}
         />
       )}
     </div>
@@ -50,6 +53,7 @@ DictationForm.propTypes = {
   changeVisibility: PropTypes.func.isRequired,
   currWord: PropTypes.object,
   getNextWord: PropTypes.func.isRequired,
+  focusHere: PropTypes.func.isRequired,
 };
 
 export default DictationForm;

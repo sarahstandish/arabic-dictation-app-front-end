@@ -4,7 +4,7 @@ import LetterButtonList from "./LetterButtonList";
 import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 
-const MenuForm = ({ visibility, getWords, loading, loadingOn }) => {
+const MenuForm = ({ visibility, getWords, loading, loadingOn, focusHere }) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -108,7 +108,12 @@ const MenuForm = ({ visibility, getWords, loading, loadingOn }) => {
         allLettersSelected={allLettersSelected}
       />
       {loading && <Spinner />}
-      <button className="button" type="submit" disabled={!validSelection()}>
+      <button
+        className="button"
+        type="submit"
+        disabled={!validSelection()}
+        ref={focusHere}
+      >
         Go
       </button>
     </form>
@@ -120,6 +125,7 @@ MenuForm.propTypes = {
   getWords: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   loadingOn: PropTypes.func.isRequired,
+  focusHere: PropTypes.func.isRequired,
 };
 
 export default MenuForm;

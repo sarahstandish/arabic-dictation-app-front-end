@@ -109,6 +109,7 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Add slower button or record all words more slowly
 - On desktop, automatically focus on 'next' button?
 - Major bug! fix the series of events that happens when the API re-fetches new words, or runs out of words
+- Correct for strings that fetch tanween fatha, do not include alif as a separate search term
 
 # To Do - styles
 - Update API error message "no results matched your search"

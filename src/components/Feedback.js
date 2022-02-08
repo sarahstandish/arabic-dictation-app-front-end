@@ -3,7 +3,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
 
-const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
+const Feedback = ({
+  currWord,
+  submittedWord,
+  visibility,
+  getNextWord,
+  focusHere,
+}) => {
   const { unvoweled_word, voweled_word } = currWord;
 
   const currWordCorrect = () => {
@@ -98,8 +104,6 @@ const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
     }
   };
 
-  const onEnter = (event) => {};
-
   return (
     <div className={`feedback ${visibility.getClass("feedback")}`}>
       <p className="feedback-p evaluation">
@@ -114,6 +118,7 @@ const Feedback = ({ currWord, submittedWord, visibility, getNextWord }) => {
         className="button"
         id="next-word-button"
         onClick={() => getNextWord(currWordCorrect())}
+        ref={focusHere}
       >
         Next Word
       </button>
@@ -126,6 +131,7 @@ Feedback.propTypes = {
   submittedWord: PropTypes.string,
   visibility: PropTypes.object.isRequired,
   getNextWord: PropTypes.func.isRequired,
+  focusHere: PropTypes.func.isRequired,
 };
 
 export default Feedback;
