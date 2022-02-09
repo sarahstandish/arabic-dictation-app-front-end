@@ -119,4 +119,12 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Solve mystery of font not loading
 - set overflow:scroll on the app
 - set min-height and max-height on the app
-- Change Arabic font to one that isn't insane when displaying لا
+
+# Arabic font notes
+  /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
+  /* --arabic-font: 'IBM Plex Sans Arabic', sans-serif; Evaluation: best one so far */
+  /* --arabic-font: 'Readex Pro', sans-serif; Evaluation: something is weird or unclear about it */
+  /* --arabic-font: 'Almarai', sans-serif; Evaluation: It's fine. Very square. */
+  /* --arabic-font: 'Baloo Bhaijaan 2', cursive; Evaluation: It's fine, nothing exciting, an okay option */
+  /* --arabic-font: 'Harmattan', sans-serif; Evaluation: A little cartoony for me*/
+  /* --arabic-font: 'Noto Naskh Arabic', serif; Evaluation: amazing font but لا looks weird :(*/ 

@@ -45,7 +45,7 @@ const InputForm = ({ updateSubmittedWord, changeVisibility, focusHere }) => {
         Type the word you hear, without short vowels or <em>shadda</em>.
       </p>
       <input
-        className="arabic-user-input"
+        className="arabic-user-input arabic"
         type="text"
         value={userInput}
         onChange={changeUserInput}
