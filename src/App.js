@@ -17,7 +17,6 @@ function App() {
   const [error, setError] = useState("");
 
   const [searchLetters, setSearchLetters] = useState("");
-  const [searchedForAllLetters, setSearchedForAllLetters] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -38,15 +37,11 @@ function App() {
 
   // get words from api
   const getWords = (letters) => {
+    setSearchLetters(letters);
     let url = "https://arabic-dictation-api.herokuapp.com/words";
     // letters passed as null if only base url should be used
     if (letters) {
       url += `?letters=${letters}`;
-      setSearchLetters(letters);
-      setSearchedForAllLetters(false);
-    } else {
-      setSearchedForAllLetters(true);
-      setSearchLetters("");
     }
     axios
       .get(url)
@@ -56,14 +51,20 @@ function App() {
         setMoreWordsAvailable(response.data["more_words_available"]);
         setError("");
         // show dictation form if currently invisible
-        if (visibility["menuForm"]) {
-          toggleVisibility(["menuForm", "dictationForm"]);
-        }
+        changeVisibility({
+          menuForm: false,
+          dictationForm: true,
+          inputForm: true,
+          feedback: false,
+        });
       })
       .catch((error) => {
         setError(error.response.data["message"]);
         setWords([]);
-        toggleVisibility(["menuForm", "errorScreen"]);
+        changeVisibility({
+          menuForm: false,
+          errorScreen: true,
+        });
       })
       .finally(() => {
         setLoading(false);
@@ -83,33 +84,30 @@ function App() {
       setCurrWord(firstWord);
       setWords(wordsCopy);
       setError("");
-      toggleVisibility(["inputForm", "feedback"]);
+      changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && moreWordsAvailable) {
       // search again
       getWords(searchLetters);
       setError("");
-      toggleVisibility(["inputForm", "feedback"]);
+      changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && !moreWordsAvailable) {
       // set an error message
       setCurrWord({});
       setError(
         "There are no more words available with the selected letter combination."
       );
-      toggleVisibility(["dictationForm", "errorScreen"]);
+      changeVisibility({ dictationForm: false, errorScreen: true });
     }
   };
 
   // toggle visibility of components
-  const toggleVisibility = (components) => {
+  const changeVisibility = (componentsObj) => {
     const visibilityCopy = { ...visibility };
-    for (let component of components.keys()) {
-      // console.log(
-      //   `Changing the visibility of ${component} from ${
-      //     visibilityCopy[component]
-      //   } to ${!visibilityCopy[component]}`
-      // );
-      visibilityCopy[component] = components.component;
-      // visibilityCopy[component] = !visibilityCopy[component];
+    for (let component of Object.keys(componentsObj)) {
+      console.log(
+        `Changing the visibility of ${component} from ${visibilityCopy[component]} to ${componentsObj[component]}`
+      );
+      visibilityCopy[component] = componentsObj[component];
     }
     setVisibility(visibilityCopy);
   };
@@ -126,7 +124,7 @@ function App() {
       <h1 id="app-title">Arabic Dictation App</h1>
       {visibility.start && (
         <Start
-          toggleVisibility={toggleVisibility}
+          changeVisibility={changeVisibility}
           loading={loading}
           focusHere={focusHere}
         />
@@ -137,14 +135,12 @@ function App() {
           loading={loading}
           loadingOn={loadingOn}
           focusHere={focusHere}
-          searchLetters={searchLetters}
-          searchedForAllLetters={searchedForAllLetters}
         />
       )}
       {visibility.dictationForm && (
         <DictationForm
           visibility={visibility}
-          toggleVisibility={toggleVisibility}
+          changeVisibility={changeVisibility}
           currWord={currWord}
           getNextWord={getNextWord}
           focusHere={focusHere}
@@ -153,7 +149,7 @@ function App() {
       {visibility.errorScreen && (
         <ErrorScreen
           error={error}
-          toggleVisibility={toggleVisibility}
+          changeVisibility={changeVisibility}
           focusHere={focusHere}
         />
       )}

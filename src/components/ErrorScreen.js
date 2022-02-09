@@ -2,14 +2,14 @@ import "./ErrorScreen.css";
 import React from "react";
 import PropTypes from "prop-types";
 
-const ErrorScreen = ({ error, toggleVisibility, focusHere }) => {
+const ErrorScreen = ({ error, changeVisibility, focusHere }) => {
   return (
     <div className="error-screen">
       <p className="error">{error}</p>
       <button
         className="button"
         id="change-letters-button"
-        onClick={() => toggleVisibility(["errorScreen", "menuForm"])}
+        onClick={() => changeVisibility({ errorScreen: true, menuForm: false })}
         ref={focusHere}
       >
         Change letters
@@ -20,7 +20,7 @@ const ErrorScreen = ({ error, toggleVisibility, focusHere }) => {
 
 ErrorScreen.propTypes = {
   error: PropTypes.string.isRequired,
-  toggleVisibility: PropTypes.func.isRequired,
+  changeVisibility: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };
 
