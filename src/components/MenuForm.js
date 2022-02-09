@@ -44,7 +44,6 @@ const MenuForm = ({
     "\u0629", // taa marbuuta
     "\u0649", // alif maqsuura
     "\u0623\u0625", // alif with hamza on top, alif with hamza on bottom
-    "\u0627\u064B", // tanween fatha
     "\u0621\u0624\u0626", // independent hamza, waw with hamza on top, yaa with hamza on top
     "\u0622", // alif medda
   ]);
