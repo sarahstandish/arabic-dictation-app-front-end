@@ -110,12 +110,12 @@ https://blog.maisie.ink/react-ref-autofocus/
 - On desktop, automatically focus on 'next' button?
 - Major bug! fix the series of events that happens when the API re-fetches new words, or runs out of words
 - Correct for strings that fetch tanween fatha, do not include alif as a separate search term
+- Fix bug where the user has one word left, gets it wrong, and the audio then doesn't play when it's reloaded
+- Remove ل from database (id 2099)
 
 # To Do - styles
 - Update API error message "no results matched your search"
 - Check mobile visibility
-- Add animated transitions
-  - Animate menu to dissolve/fade away after searching
 - Solve mystery of font not loading
 - set overflow:scroll on the app
 - set min-height and max-height on the app

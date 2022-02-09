@@ -19,7 +19,7 @@ const DictationForm = ({
   };
 
   return (
-    <div className="dictation=form">
+    <div className="dictation-form">
       <button
         className="button"
         id="change-letters-button"

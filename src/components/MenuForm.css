@@ -1,13 +1,13 @@
 .menu-form-container {
     position: relative;
-
+    max-width: 90%;
+    height: 75%;
 }
 
 .menu-form {
     display: flex;
     flex-direction: column;
-    max-width: 90%;
-    height: 75%;
+    height: 100%;
     align-items: center;
     justify-content: space-evenly;
     animation: fadeIn var(--default-fade-in-len);
