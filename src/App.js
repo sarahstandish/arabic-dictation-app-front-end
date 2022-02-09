@@ -102,13 +102,14 @@ function App() {
   // toggle visibility of components
   const toggleVisibility = (components) => {
     const visibilityCopy = { ...visibility };
-    for (let component of components) {
-      console.log(
-        `Changing the visibility of ${component} from ${
-          visibilityCopy[component]
-        } to ${!visibilityCopy[component]}`
-      );
-      visibilityCopy[component] = !visibilityCopy[component];
+    for (let component of components.keys()) {
+      // console.log(
+      //   `Changing the visibility of ${component} from ${
+      //     visibilityCopy[component]
+      //   } to ${!visibilityCopy[component]}`
+      // );
+      visibilityCopy[component] = components.component;
+      // visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);
   };
