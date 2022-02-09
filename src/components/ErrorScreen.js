@@ -9,7 +9,7 @@ const ErrorScreen = ({ error, changeVisibility, focusHere }) => {
       <button
         className="button"
         id="change-letters-button"
-        onClick={() => changeVisibility({ errorScreen: true, menuForm: false })}
+        onClick={() => changeVisibility({ errorScreen: false, menuForm: true })}
         ref={focusHere}
       >
         Change letters

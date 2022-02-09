@@ -29,7 +29,9 @@ const DictationForm = ({
       >
         Change letters
       </button>
-      {visibility.pronounceWord && <PronounceWord currWord={currWord} />}
+      {visibility.pronounceWord && (
+        <PronounceWord currWord={currWord} visibility={visibility} />
+      )}
       {visibility.inputForm && (
         <InputForm
           changeVisibility={changeVisibility}
