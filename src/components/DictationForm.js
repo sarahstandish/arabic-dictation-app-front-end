@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 const DictationForm = ({
   visibility,
-  changeVisibility,
+  toggleVisibility,
   currWord,
   getNextWord,
   focusHere,
@@ -23,14 +23,14 @@ const DictationForm = ({
       <button
         className="button"
         id="change-letters-button"
-        onClick={() => changeVisibility(["dictationForm", "menuForm"])}
+        onClick={() => toggleVisibility(["dictationForm", "menuForm"])}
       >
         Change letters
       </button>
       {visibility.pronounceWord && <PronounceWord currWord={currWord} />}
       {visibility.inputForm && (
         <InputForm
-          changeVisibility={changeVisibility}
+          toggleVisibility={toggleVisibility}
           currWord={currWord}
           updateSubmittedWord={updateSubmittedWord}
           focusHere={focusHere}
@@ -50,7 +50,7 @@ const DictationForm = ({
 
 DictationForm.propTypes = {
   visibility: PropTypes.object.isRequired,
-  changeVisibility: PropTypes.func.isRequired,
+  toggleVisibility: PropTypes.func.isRequired,
   currWord: PropTypes.object,
   getNextWord: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,

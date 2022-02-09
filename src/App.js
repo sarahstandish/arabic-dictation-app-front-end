@@ -57,13 +57,13 @@ function App() {
         setError("");
         // show dictation form if currently invisible
         if (visibility["menuForm"]) {
-          changeVisibility(["menuForm", "dictationForm"]);
+          toggleVisibility(["menuForm", "dictationForm"]);
         }
       })
       .catch((error) => {
         setError(error.response.data["message"]);
         setWords([]);
-        changeVisibility(["menuForm", "errorScreen"]);
+        toggleVisibility(["menuForm", "errorScreen"]);
       })
       .finally(() => {
         setLoading(false);
@@ -83,26 +83,31 @@ function App() {
       setCurrWord(firstWord);
       setWords(wordsCopy);
       setError("");
-      changeVisibility(["inputForm", "feedback"]);
+      toggleVisibility(["inputForm", "feedback"]);
     } else if (words.length === 0 && moreWordsAvailable) {
       // search again
       getWords(searchLetters);
       setError("");
-      changeVisibility(["inputForm", "feedback"]);
+      toggleVisibility(["inputForm", "feedback"]);
     } else if (words.length === 0 && !moreWordsAvailable) {
       // set an error message
       setCurrWord({});
       setError(
         "There are no more words available with the selected letter combination."
       );
-      changeVisibility(["dictationForm", "errorScreen"]);
+      toggleVisibility(["dictationForm", "errorScreen"]);
     }
   };
 
-  // change visibility of components
-  const changeVisibility = (components) => {
+  // toggle visibility of components
+  const toggleVisibility = (components) => {
     const visibilityCopy = { ...visibility };
     for (let component of components) {
+      console.log(
+        `Changing the visibility of ${component} from ${
+          visibilityCopy[component]
+        } to ${!visibilityCopy[component]}`
+      );
       visibilityCopy[component] = !visibilityCopy[component];
     }
     setVisibility(visibilityCopy);
@@ -120,7 +125,7 @@ function App() {
       <h1 id="app-title">Arabic Dictation App</h1>
       {visibility.start && (
         <Start
-          changeVisibility={changeVisibility}
+          toggleVisibility={toggleVisibility}
           loading={loading}
           focusHere={focusHere}
         />
@@ -138,7 +143,7 @@ function App() {
       {visibility.dictationForm && (
         <DictationForm
           visibility={visibility}
-          changeVisibility={changeVisibility}
+          toggleVisibility={toggleVisibility}
           currWord={currWord}
           getNextWord={getNextWord}
           focusHere={focusHere}
@@ -147,7 +152,7 @@ function App() {
       {visibility.errorScreen && (
         <ErrorScreen
           error={error}
-          changeVisibility={changeVisibility}
+          toggleVisibility={toggleVisibility}
           focusHere={focusHere}
         />
       )}

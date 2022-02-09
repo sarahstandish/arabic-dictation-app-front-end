@@ -2,7 +2,7 @@ import "./InputForm.css";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const InputForm = ({ updateSubmittedWord, changeVisibility, focusHere }) => {
+const InputForm = ({ updateSubmittedWord, toggleVisibility, focusHere }) => {
   const [userInput, setUserInput] = useState("");
 
   const changeUserInput = (event) => {
@@ -13,7 +13,7 @@ const InputForm = ({ updateSubmittedWord, changeVisibility, focusHere }) => {
     event.preventDefault();
     updateSubmittedWord(userInput);
     setUserInput("");
-    changeVisibility(["inputForm", "feedback"]);
+    toggleVisibility(["inputForm", "feedback"]);
   };
 
   const isInvalidInput = () => {
@@ -65,7 +65,7 @@ const InputForm = ({ updateSubmittedWord, changeVisibility, focusHere }) => {
 
 InputForm.propTypes = {
   updateSubmittedWord: PropTypes.func.isRequired,
-  changeVisibility: PropTypes.func.isRequired,
+  toggleVisibility: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };
 

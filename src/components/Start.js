@@ -2,7 +2,7 @@ import "./Start.css";
 import React from "react";
 import PropTypes from "prop-types";
 
-const Start = ({ changeVisibility, focusHere }) => {
+const Start = ({ toggleVisibility, focusHere }) => {
   return (
     <div className="start">
       <p className="app-description directions">
@@ -21,7 +21,7 @@ const Start = ({ changeVisibility, focusHere }) => {
         Recieve feedback on your attempt, and retry words you got wrong.
       </p>
       <button
-        onClick={() => changeVisibility(["start", "menuForm"])}
+        onClick={() => toggleVisibility(["start", "menuForm"])}
         id="start-button"
         className="button"
         ref={focusHere}
@@ -33,7 +33,7 @@ const Start = ({ changeVisibility, focusHere }) => {
 };
 
 Start.propTypes = {
-  changeVisibility: PropTypes.func.isRequired,
+  toggleVisibility: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
 };
 
