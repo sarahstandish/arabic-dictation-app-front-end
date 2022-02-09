@@ -17,6 +17,7 @@ function App() {
   const [error, setError] = useState("");
 
   const [searchLetters, setSearchLetters] = useState("");
+  const [searchedForAllLetters, setSearchedForAllLetters] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -37,11 +38,15 @@ function App() {
 
   // get words from api
   const getWords = (letters) => {
-    setSearchLetters(letters);
     let url = "https://arabic-dictation-api.herokuapp.com/words";
     // letters passed as null if only base url should be used
     if (letters) {
       url += `?letters=${letters}`;
+      setSearchLetters(letters);
+      setSearchedForAllLetters(false);
+    } else {
+      setSearchedForAllLetters(true);
+      setSearchLetters("");
     }
     axios
       .get(url)
@@ -126,6 +131,8 @@ function App() {
           loading={loading}
           loadingOn={loadingOn}
           focusHere={focusHere}
+          searchLetters={searchLetters}
+          searchedForAllLetters={searchedForAllLetters}
         />
       )}
       {visibility.dictationForm && (
