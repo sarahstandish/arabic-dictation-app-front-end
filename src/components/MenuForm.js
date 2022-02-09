@@ -4,7 +4,14 @@ import LetterButtonList from "./LetterButtonList";
 import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 
-const MenuForm = ({ getWords, loading, loadingOn, focusHere }) => {
+const MenuForm = ({
+  getWords,
+  loading,
+  loadingOn,
+  focusHere,
+  searchLetters,
+  searchedForAllLetters,
+}) => {
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -42,11 +49,19 @@ const MenuForm = ({ getWords, loading, loadingOn, focusHere }) => {
     "\u0622", // alif medda
   ]);
 
+  if (searchedForAllLetters) {
+    searchLetters = allLetters;
+  }
+
   // a set of the letters the user has selected
-  const [selectedLetters, setSelectedLetters] = useState(new Set());
+  const [selectedLetters, setSelectedLetters] = useState(
+    new Set(Array.from(searchLetters))
+  );
 
   // whether the user has pressed the 'all letters' button
-  const [allLettersSelected, setAllLettersSelected] = useState(false);
+  const [allLettersSelected, setAllLettersSelected] = useState(
+    searchedForAllLetters
+  );
 
   const selectLetter = (letter) => {
     const selectedLettersCopy = new Set(selectedLetters);
@@ -81,7 +96,7 @@ const MenuForm = ({ getWords, loading, loadingOn, focusHere }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     loadingOn();
-    let letters = null;
+    let letters = "";
     if (!allLettersSelected) {
       letters = Array.from(selectedLetters).reduce(
         (str, curr) => (str += curr)
@@ -126,6 +141,8 @@ MenuForm.propTypes = {
   loading: PropTypes.bool.isRequired,
   loadingOn: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
+  searchLetters: PropTypes.string.isRequired,
+  searchedForAllLetters: PropTypes.bool.isRequired,
 };
 
 export default MenuForm;

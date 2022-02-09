@@ -7,16 +7,23 @@ import axios from "axios";
 import ErrorScreen from "./components/ErrorScreen";
 
 function App() {
-  // the words to present to the user
+  // the array words of words that will be given to the user
   const [words, setWords] = useState([]);
 
+  // the current word presented to the user
   const [currWord, setCurrWord] = useState({});
 
+  // whether there are more words available
   const [moreWordsAvailable, setMoreWordsAvailable] = useState(false);
 
+  // any error messages
   const [error, setError] = useState("");
 
+  // the letters the user searched for
   const [searchLetters, setSearchLetters] = useState("");
+
+  // whether or not the user searched for all letters on their last search
+  const [searchedForAllLetters, setSearchedForAllLetters] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -42,6 +49,9 @@ function App() {
     // letters passed as null if only base url should be used
     if (letters) {
       url += `?letters=${letters}`;
+      setSearchedForAllLetters(false);
+    } else {
+      setSearchedForAllLetters(true);
     }
     axios
       .get(url)
@@ -135,6 +145,8 @@ function App() {
           loading={loading}
           loadingOn={loadingOn}
           focusHere={focusHere}
+          searchLetters={searchLetters}
+          searchedForAllLetters={searchedForAllLetters}
         />
       )}
       {visibility.dictationForm && (
