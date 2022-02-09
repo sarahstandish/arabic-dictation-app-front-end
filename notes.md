@@ -106,17 +106,13 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Input "keyboard"
 - Add 'about' page
 - Add slower button or record all words more slowly
-- Correct for strings that fetch tanween fatha, do not include alif as a separate search term
 - Fix bug where the user has one word left, gets it wrong, and the audio then doesn't play when it's reloaded - this is the trickiest bug.
-- Remove ل from database (id 2099)
 
 # To Do - styles
-- Update API error message "no results matched your search"
 - Check mobile visibility
 - set overflow:scroll on the app
-- set min-height and max-height on the app
+- set min-height on the app
 - Check appearance across browsers
-- Get rid of different color for diacritics? -- whether this is showing up might depend on the browser
 
 # Arabic font notes
   /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
