@@ -43,7 +43,7 @@ function App() {
   };
 
   // get words from api
-  const getWords = (letters) => {
+  const getWords = (letters, retryLastWord = false) => {
     setSearchLetters(letters);
     let url = "https://arabic-dictation-api.herokuapp.com/words";
     // letters passed as null if only base url should be used
@@ -56,9 +56,14 @@ function App() {
     axios
       .get(url)
       .then((response) => {
-        setCurrWord(response.data.words.shift());
-        setWords(response.data.words);
-        setMoreWordsAvailable(response.data["more_words_available"]);
+        const currWordCopy = currWord;
+        const responseWordsArr = [...response.data.words];
+        if (retryLastWord) {
+          responseWordsArr.push(currWordCopy);
+        }
+        setCurrWord(responseWordsArr.shift());
+        setWords(responseWordsArr);
+        setMoreWordsAvailable(response.data.more_words_available);
         setError("");
         // show dictation form if currently invisible
         changeVisibility({
@@ -102,7 +107,7 @@ function App() {
         "There are no more words left, but I can search for more words."
       );
       // search again
-      getWords(searchLetters);
+      getWords(searchLetters, !currWordCorrect);
       setError("");
       changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && !moreWordsAvailable) {
