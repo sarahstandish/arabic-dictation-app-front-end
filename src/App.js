@@ -53,11 +53,12 @@ function App() {
     } else {
       setSearchedForAllLetters(true);
     }
+    const currWordCopy = currWord;
     axios
       .get(url)
       .then((response) => {
-        const currWordCopy = currWord;
         const responseWordsArr = [...response.data.words];
+        // add the last word to the word array if the user got it wrong
         if (retryLastWord) {
           responseWordsArr.push(currWordCopy);
         }
@@ -92,10 +93,8 @@ function App() {
     // push the current word back on to the end of the words array if the user got it wrong
     if (!currWordCorrect) {
       wordsCopy.push(currWord);
-      console.log("Adding the word to words copy");
     }
     if (words.length > 0) {
-      console.log("There are more than zero words left.");
       // get a new current word, if there are words left
       let firstWord = wordsCopy.shift();
       setCurrWord(firstWord);
@@ -103,17 +102,11 @@ function App() {
       setError("");
       changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && moreWordsAvailable) {
-      console.log(
-        "There are no more words left, but I can search for more words."
-      );
       // search again
       getWords(searchLetters, !currWordCorrect);
       setError("");
       changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && !moreWordsAvailable) {
-      console.log(
-        "There are no more words left, and I can't search for more words."
-      );
       // set an error message
       setCurrWord({});
       setError(

@@ -106,13 +106,15 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Add 'about' footer
 - Input "keyboard"
 - Add slower button or record all words more slowly
-- Fix bug where an incorrect word, if it is the last word, is not re-added to the list
-- Remove ههه from the database - id 1962
-- Remove خخخ from the database - id 4588
+- Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
+- Remove word with id 401 مباراة very bad pronunciation!!
 
 # To Do - styles
 - Check mobile visibility
 - Check appearance across browsers
+- Make sure there is a 
+- Enlarge 'all letters' button
+- Check spacing of elements
 
 # Arabic font notes
   /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
