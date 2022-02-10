@@ -2,11 +2,14 @@ import "./KeyboardLetterList.css";
 import React from "react";
 import PropTypes from "prop-types";
 import KeyBoardLetter from "./KeyboardLetter";
+import DeleteButton from "./DeleteButton";
 
 const KeyboardLetterList = ({
   searchLetters,
   searchedForAllLetters,
   allLetters,
+  onLetterClick,
+  onDeleteClick,
 }) => {
   let searchLettersSet;
 
@@ -28,9 +31,14 @@ const KeyboardLetterList = ({
         key={index}
         letter={letter}
         searchedForClass={searchedForClass}
+        onLetterClick={onLetterClick}
       />
     );
   });
+  keyboardLetterComponentList.push(
+    <DeleteButton key={allLetters.length} onDeleteClick={onDeleteClick} />
+  );
+
   return (
     <div>
       <ul className="keyboard-letter-list">{keyboardLetterComponentList}</ul>
@@ -42,6 +50,8 @@ KeyboardLetterList.propTypes = {
   searchLetters: PropTypes.string.isRequired,
   searchedForAllLetters: PropTypes.bool.isRequired,
   allLetters: PropTypes.array.isRequired,
+  onLetterClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default KeyboardLetterList;

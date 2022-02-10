@@ -19,6 +19,7 @@ const AllLettersButton = ({ selectAllLetters, allLettersSelected }) => {
 AllLettersButton.propTypes = {
   selectAllLetters: PropTypes.func.isRequired,
   allLettersSelected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AllLettersButton;

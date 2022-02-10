@@ -60,6 +60,17 @@ const InputForm = ({
     ? "hide-keyboard"
     : "show-keyboard";
 
+  const onLetterClick = (letter) => {
+    let userInputCopy = userInput;
+    userInputCopy += letter;
+    setUserInput(userInputCopy);
+  };
+
+  const onDeleteClick = () => {
+    let userInputCopy = userInput.slice(0, -1);
+    setUserInput(userInputCopy);
+  };
+
   return (
     <div className="input-form-container">
       <form className="input-form" onSubmit={onFormSubmit}>
@@ -95,6 +106,8 @@ const InputForm = ({
         <Keyboard
           searchLetters={searchLetters}
           searchedForAllLetters={searchedForAllLetters}
+          onLetterClick={onLetterClick}
+          onDeleteClick={onDeleteClick}
         />
       )}
     </div>

@@ -2,15 +2,21 @@ import "./KeyboardLetter.css";
 import React from "react";
 import PropTypes from "prop-types";
 
-const KeyBoardLetter = ({ letter, searchedForClass }) => {
+const KeyBoardLetter = ({ letter, searchedForClass, onLetterClick }) => {
   return (
-    <li className={`keyboard-letter arabic ${searchedForClass}`}>{letter}</li>
+    <li
+      onClick={(event) => onLetterClick(event.target.innerHTML)}
+      className={`keyboard-letter arabic ${searchedForClass}`}
+    >
+      {letter}
+    </li>
   );
 };
 
 KeyBoardLetter.propTypes = {
   letter: PropTypes.string.isRequired,
   searchedForClass: PropTypes.string.isRequired,
+  onLetterClick: PropTypes.func.isRequired,
 };
 
 export default KeyBoardLetter;

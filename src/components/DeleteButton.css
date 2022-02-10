@@ -1,0 +1,7 @@
+#delete {
+    background-color: var(--text-color);
+    width: 141px;
+    height: 57px;
+    line-height: 57px;
+    font-family: var(--body-font);
+}

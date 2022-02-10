@@ -3,7 +3,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import KeyboardLetterList from "./KeyboardLetterList";
 
-const Keyboard = ({ searchLetters, searchedForAllLetters }) => {
+const Keyboard = ({
+  searchLetters,
+  searchedForAllLetters,
+  onLetterClick,
+  onDeleteClick,
+}) => {
   const allLetters = [
     "\u0627", // alif
     "\u0628", // baa
@@ -44,11 +49,12 @@ const Keyboard = ({ searchLetters, searchedForAllLetters }) => {
   ];
   return (
     <div id="keyboard-container">
-      <p>This is the Keyboard</p>
       <KeyboardLetterList
         allLetters={allLetters}
         searchLetters={searchLetters}
         searchedForAllLetters={searchedForAllLetters}
+        onLetterClick={onLetterClick}
+        onDeleteClick={onDeleteClick}
       />
     </div>
   );
@@ -57,6 +63,8 @@ const Keyboard = ({ searchLetters, searchedForAllLetters }) => {
 Keyboard.propTypes = {
   searchLetters: PropTypes.string.isRequired,
   searchedForAllLetters: PropTypes.bool.isRequired,
+  onLetterClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default Keyboard;

@@ -104,10 +104,11 @@ https://blog.maisie.ink/react-ref-autofocus/
 
 # To Do - functionality
 - Add 'about' footer
-- Input "keyboard"
 - Add slower button or record all words more slowly
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
 - Remove word with id 401 مباراة very bad pronunciation!!
+- Delete word 4439 لِـ
+- Check AllLettersButton onClick prop
 
 # To Do - styles
 - Check mobile visibility
@@ -115,6 +116,7 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Make sure there is a 
 - Enlarge 'all letters' button
 - Check spacing of elements
+- Fix variable spacing of elements
 
 # Arabic font notes
   /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
