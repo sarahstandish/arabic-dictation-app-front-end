@@ -36,6 +36,7 @@ function App() {
     inputForm: true,
     feedback: false,
     errorScreen: false,
+    keyboard: false,
   });
 
   const loadingOn = () => {
@@ -161,6 +162,8 @@ function App() {
           currWord={currWord}
           getNextWord={getNextWord}
           focusHere={focusHere}
+          searchLetters={searchLetters}
+          searchedForAllLetters={searchedForAllLetters}
         />
       )}
       {visibility.errorScreen && (

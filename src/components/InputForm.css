@@ -24,3 +24,13 @@ input {
     background-color: var(--background-color);
     color: var(--accent-color-1);
 }
+
+#keyboard-button {
+    font-size: xx-large;
+}
+
+.hide-keyboard {
+    text-decoration: line-through;
+    text-decoration-color: maroon;
+    text-decoration-thickness: 3px;
+}

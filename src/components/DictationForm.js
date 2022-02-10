@@ -11,6 +11,8 @@ const DictationForm = ({
   currWord,
   getNextWord,
   focusHere,
+  searchLetters,
+  searchedForAllLetters,
 }) => {
   const [submittedWord, setSubmittedWord] = useState("");
 
@@ -38,6 +40,9 @@ const DictationForm = ({
           currWord={currWord}
           updateSubmittedWord={updateSubmittedWord}
           focusHere={focusHere}
+          visibility={visibility}
+          searchLetters={searchLetters}
+          searchedForAllLetters={searchedForAllLetters}
         />
       )}
       {visibility.feedback && (
@@ -58,6 +63,8 @@ DictationForm.propTypes = {
   currWord: PropTypes.object,
   getNextWord: PropTypes.func.isRequired,
   focusHere: PropTypes.func.isRequired,
+  searchLetters: PropTypes.string.isRequired,
+  searchedForAllLetters: PropTypes.bool.isRequired,
 };
 
 export default DictationForm;
