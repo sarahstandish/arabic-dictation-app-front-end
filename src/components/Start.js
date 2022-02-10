@@ -10,7 +10,7 @@ const Start = ({ changeVisibility, focusHere }) => {
       </p>
       <i className="far fa-hand-pointer"></i>
       <p className="app-description directions">
-        Select the Arabic letters you know or want to practice.
+        Select the Arabic letters you want to practice.
       </p>
       <i className="fas fa-volume-up"></i>
       <p className="app-description directions">

@@ -1,8 +1,8 @@
 import "./PronounceWord.css";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const PronounceWord = ({ currWord }) => {
+const PronounceWord = ({ currWord, visibility }) => {
   // audioplayer
   // useRef will give you the same object on every render
   // mutating the .current property doesn't cause a rerender
@@ -12,13 +12,17 @@ const PronounceWord = ({ currWord }) => {
     audioPlayer.current.play();
   };
 
+  // the below does not work
+  // if (visibility.inputForm && audioPlayer) {
+  //   playAudio();
+  // }
+
   return (
-    // <div className={`PronounceWord ${visibility.getClass("pronounceWord")}`}>
     <div className="pronounce-word">
       <audio
         ref={audioPlayer} // React will set the ref's .current property to the corresponding DOM node whenever that node changes
         autoPlay
-        src={currWord["audio_file"]}
+        src={currWord.audio_file}
         type="audio/mp3"
       ></audio>
       <button onClick={playAudio} className="button" id="pronounce-word-button">
@@ -30,6 +34,7 @@ const PronounceWord = ({ currWord }) => {
 
 PronounceWord.propTypes = {
   currWord: PropTypes.object.isRequired,
+  visibility: PropTypes.object.isRequired,
 };
 
 export default PronounceWord;

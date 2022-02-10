@@ -56,8 +56,8 @@ function App() {
     axios
       .get(url)
       .then((response) => {
-        setCurrWord(response.data["words"].shift());
-        setWords(response.data["words"]);
+        setCurrWord(response.data.words.shift());
+        setWords(response.data.words);
         setMoreWordsAvailable(response.data["more_words_available"]);
         setError("");
         // show dictation form if currently invisible
@@ -82,13 +82,15 @@ function App() {
   };
 
   const getNextWord = (currWordCorrect) => {
-    let wordsCopy = words;
+    let wordsCopy = [...words];
 
     // push the current word back on to the end of the words array if the user got it wrong
     if (!currWordCorrect) {
       wordsCopy.push(currWord);
+      console.log("Adding the word to words copy");
     }
     if (words.length > 0) {
+      console.log("There are more than zero words left.");
       // get a new current word, if there are words left
       let firstWord = wordsCopy.shift();
       setCurrWord(firstWord);
@@ -96,11 +98,17 @@ function App() {
       setError("");
       changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && moreWordsAvailable) {
+      console.log(
+        "There are no more words left, but I can search for more words."
+      );
       // search again
       getWords(searchLetters);
       setError("");
       changeVisibility({ inputForm: true, feedback: false });
     } else if (words.length === 0 && !moreWordsAvailable) {
+      console.log(
+        "There are no more words left, and I can't search for more words."
+      );
       // set an error message
       setCurrWord({});
       setError(
@@ -114,9 +122,9 @@ function App() {
   const changeVisibility = (componentsObj) => {
     const visibilityCopy = { ...visibility };
     for (let component of Object.keys(componentsObj)) {
-      console.log(
-        `Changing the visibility of ${component} from ${visibilityCopy[component]} to ${componentsObj[component]}`
-      );
+      // console.log(
+      //   `Changing the visibility of ${component} from ${visibilityCopy[component]} to ${componentsObj[component]}`
+      // );
       visibilityCopy[component] = componentsObj[component];
     }
     setVisibility(visibilityCopy);
@@ -125,7 +133,6 @@ function App() {
   const focusHere = useCallback((inputElement) => {
     if (inputElement) {
       inputElement.focus();
-      console.log("Focus is now on ", inputElement);
     }
   }, []);
 

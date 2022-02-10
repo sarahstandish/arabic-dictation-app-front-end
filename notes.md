@@ -103,15 +103,15 @@ https://blog.maisie.ink/react-ref-autofocus/
 # To read
 
 # To Do - functionality
+- Add 'about' footer
 - Input "keyboard"
-- Add 'about' page
 - Add slower button or record all words more slowly
-- Fix bug where the user has one word left, gets it wrong, and the audio then doesn't play when it's reloaded - this is the trickiest bug.
+- Fix bug where an incorrect word, if it is the last word, is not re-added to the list
+- Remove ههه from the database - id 1962
+- Remove خخخ from the database - id 4588
 
 # To Do - styles
 - Check mobile visibility
-- set overflow:scroll on the app
-- set min-height on the app
 - Check appearance across browsers
 
 # Arabic font notes

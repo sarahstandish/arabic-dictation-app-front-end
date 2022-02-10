@@ -113,7 +113,7 @@ const MenuForm = ({
       {loading && <Spinner />}
       <form onSubmit={onSubmit} className={`menu-form ${fadeOutTime}`}>
         <p className="instructions" id="select-letter-instructions">
-          Select three or more letters you want in your dictation words.
+          Select three or more letters you want to practice.
         </p>
         <LetterButtonList
           allLetters={allLetters}

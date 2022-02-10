@@ -54,7 +54,6 @@ p {
   max-width: 550px;
   margin: 0 auto;
   min-height: 650px;
-  overflow: scroll;
 }
 
 /* button styling */
