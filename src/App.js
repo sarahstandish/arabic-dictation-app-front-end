@@ -137,7 +137,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1 id="app-title">Arabic Dictation App</h1>
+      <header>
+        <h1 id="app-title">Arabic Dictation App</h1>
+        <a
+          href="https://sarahstandish.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fas fa-hat-wizard"></i>
+        </a>
+      </header>
       {visibility.start && (
         <Start
           changeVisibility={changeVisibility}

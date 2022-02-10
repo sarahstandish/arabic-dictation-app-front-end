@@ -27,12 +27,6 @@ html, body, #root {
   background-color: var(--background-color);
 }
 
-h1 {
-  font-family: var(--title-font);
-  margin: 15px;
-  color: var(--text-color)
-}
-
 p {
   font-family: var(--body-font);
   font-size: larger;
@@ -89,3 +83,27 @@ button:disabled:hover {
   display: none !important;
 }
 
+/* header */
+header {
+  width: 100%;
+  max-width: 550px;
+}
+
+h1 {
+  font-family: var(--title-font);
+  margin: 15px;
+  color: var(--text-color);
+  display: inline-block;
+  text-align: center;
+}
+
+.fa-hat-wizard {
+  color: var(--text-color);
+  font-size: xx-large;
+  text-align: right !important;
+}
+
+.fa-hat-wizard:hover {
+  cursor: pointer;
+  color: var(--correct-color)
+}
