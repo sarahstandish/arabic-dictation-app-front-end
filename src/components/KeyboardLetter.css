@@ -1,0 +1,21 @@
+.keyboard-letter {
+    margin: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-size: x-large;
+    border-radius: 5%;
+    width: 40px;
+    color: var(--background-color);
+}
+
+.keyboard-letter:hover {
+    cursor: pointer;
+}
+
+.searched-for {
+    background-color: var(--text-color);
+}
+
+.not-searched-for {
+    background-color: #3A6469;
+}

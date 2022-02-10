@@ -8,15 +8,32 @@ const KeyboardLetterList = ({
   searchedForAllLetters,
   allLetters,
 }) => {
-  const searchLettersSet = new Set(Array.from(searchLetters));
+  let searchLettersSet;
+
+  if (searchedForAllLetters) {
+    searchLettersSet = new Set(allLetters);
+  } else {
+    searchLettersSet = new Set(Array.from(searchLetters));
+  }
 
   const keyboardLetterComponentList = allLetters.map((letter, index) => {
-    return <KeyBoardLetter key={index} letter={letter} />;
+    let searchedForClass;
+    if (searchLettersSet.has(letter)) {
+      searchedForClass = "searched-for";
+    } else {
+      searchedForClass = "not-searched-for";
+    }
+    return (
+      <KeyBoardLetter
+        key={index}
+        letter={letter}
+        searchedForClass={searchedForClass}
+      />
+    );
   });
   return (
     <div>
-      <p>This is the Keyboard Letter List component</p>
-      <ul>{keyboardLetterComponentList}</ul>
+      <ul className="keyboard-letter-list">{keyboardLetterComponentList}</ul>
     </div>
   );
 };

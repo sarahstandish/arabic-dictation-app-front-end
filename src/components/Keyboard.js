@@ -43,7 +43,7 @@ const Keyboard = ({ searchLetters, searchedForAllLetters }) => {
     "\u0622", // alif medda
   ];
   return (
-    <div>
+    <div id="keyboard-container">
       <p>This is the Keyboard</p>
       <KeyboardLetterList
         allLetters={allLetters}
