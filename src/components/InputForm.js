@@ -89,7 +89,7 @@ const InputForm = ({
           type="text"
           value={userInput}
           onChange={changeUserInput}
-          ref={focusHere}
+          ref={!visibility.keyboard ? focusHere : null}
         ></input>
         <button
           type="submit"
