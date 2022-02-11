@@ -109,6 +109,8 @@ https://blog.maisie.ink/react-ref-autofocus/
 - Remove word with id 401 مباراة very bad pronunciation!!
 - Delete word 4439 لِـ
 - Check AllLettersButton onClick prop
+- Redo recordings with Amazon Polly https://docs.aws.amazon.com/polly/latest/dg/get-started-what-next.html
+- Test out words: https://ttsmp3.com/faq
 
 # To Do - styles
 - Check mobile visibility

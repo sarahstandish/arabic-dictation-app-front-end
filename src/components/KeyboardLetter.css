@@ -1,10 +1,10 @@
 .keyboard-letter {
-    margin: 5px;
+    margin: 3px;
     padding-bottom: 3px;
     padding-top: 3px;
     font-size: x-large;
     border-radius: 5%;
-    width: 40px;
+    width: 38px;
     color: var(--background-color);
 }
 

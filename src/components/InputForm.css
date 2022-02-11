@@ -17,7 +17,7 @@
 
 input {
     display: block;
-    padding: 10px;
+    padding: 1%;
     font-size: x-large;
     width: 50%;
     max-width: 150px;
@@ -26,17 +26,16 @@ input {
     border: 2px solid var(--accent-color-2);
     background-color: var(--background-color);
     color: var(--accent-color-1);
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 2%;
 }
 
 #keyboard-button {
     font-size: xx-large;
-    margin-top: 20px;
 }
 
 #keyboard-container {
-    margin-top: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .hide-keyboard-button {
