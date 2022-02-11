@@ -99,6 +99,7 @@ https://www.postgresql.org/docs/9.3/functions-matching.html
 https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#3-unicode-in-javascript
 https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 https://blog.maisie.ink/react-ref-autofocus/
+https://github.com/mars/create-react-app-buildpack#user-content-requires
 
 # To read
 
