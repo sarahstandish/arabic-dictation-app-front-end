@@ -139,13 +139,6 @@ function App() {
     <div className="App">
       <header>
         <h1 id="app-title">Arabic Dictation App</h1>
-        <a
-          href="https://sarahstandish.github.io/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fas fa-hat-wizard"></i>
-        </a>
       </header>
       {visibility.start && (
         <Start
@@ -182,6 +175,15 @@ function App() {
           focusHere={focusHere}
         />
       )}
+      <footer>
+        <a
+          href="https://sarahstandish.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          About the creator
+        </a>
+      </footer>
     </div>
   );
 }
