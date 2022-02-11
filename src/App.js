@@ -138,7 +138,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 id="app-title">Arabic Dictation App العربية</h1>
+        <h1 id="app-title">Arabic Dictation App</h1>
       </header>
       {visibility.start && (
         <Start
