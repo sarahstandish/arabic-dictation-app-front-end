@@ -22,18 +22,18 @@ const DictationForm = ({
 
   return (
     <div className="dictation-form">
-      <button
-        className="button"
-        id="change-letters-button"
-        onClick={() =>
-          changeVisibility({ dictationForm: false, menuForm: true })
-        }
-      >
-        Change letters
-      </button>
-      {visibility.pronounceWord && (
-        <PronounceWord currWord={currWord} visibility={visibility} />
-      )}
+      <div id="change-letters-pronounce-word-container">
+        <button
+          className="button"
+          id="change-letters-button"
+          onClick={() =>
+            changeVisibility({ dictationForm: false, menuForm: true })
+          }
+        >
+          Change letters
+        </button>
+        {visibility.pronounceWord && <PronounceWord currWord={currWord} />}
+      </div>
       {visibility.inputForm && (
         <InputForm
           changeVisibility={changeVisibility}

@@ -56,9 +56,16 @@ const InputForm = ({
     }
   };
 
-  const keyboardButtonClassname = visibility.keyboard
-    ? "hide-keyboard"
-    : "show-keyboard";
+  // control visibility of keyboard
+  let keyboardButtonClassname;
+  let keyboardClassname;
+  if (visibility.keyboard) {
+    keyboardButtonClassname = "hide-keyboard-button";
+    keyboardClassname = "keyboard-visible";
+  } else {
+    keyboardButtonClassname = "show-keyboard-button";
+    keyboardClassname = "keyboard-hidden";
+  }
 
   const onLetterClick = (letter) => {
     let userInputCopy = userInput;
@@ -72,7 +79,7 @@ const InputForm = ({
   };
 
   return (
-    <div className="input-form-container">
+    <div id="input-form-container">
       <form className="input-form" onSubmit={onFormSubmit}>
         <p className="directions">
           Type the word you hear, without short vowels or <em>shadda</em>.
@@ -102,14 +109,14 @@ const InputForm = ({
         <i className={`far fa-keyboard ${keyboardButtonClassname}`}>&nbsp;</i>
         <span className={`${keyboardButtonClassname}`}> </span>
       </button>
-      {visibility.keyboard && (
+      <div id="keyboard-container" className={`${keyboardClassname}`}>
         <Keyboard
           searchLetters={searchLetters}
           searchedForAllLetters={searchedForAllLetters}
           onLetterClick={onLetterClick}
           onDeleteClick={onDeleteClick}
         />
-      )}
+      </div>
     </div>
   );
 };

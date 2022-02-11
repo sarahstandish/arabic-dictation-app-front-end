@@ -102,13 +102,15 @@ h1 {
 footer {
   border-top: 1px solid var(--text-color);
   width: 100%;
+  display: block;
+  margin-top: auto;
 }
 a {
   display: inline-block;
   text-decoration: none;
   font-family: var(--body-font);
   color: var(--text-color);
-  padding-top: 10px;
+  line-height: 50px;
 }
 
 a:hover {

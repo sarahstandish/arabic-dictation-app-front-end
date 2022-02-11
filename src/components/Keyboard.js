@@ -48,15 +48,13 @@ const Keyboard = ({
     "\u0622", // alif medda
   ];
   return (
-    <div id="keyboard-container">
-      <KeyboardLetterList
-        allLetters={allLetters}
-        searchLetters={searchLetters}
-        searchedForAllLetters={searchedForAllLetters}
-        onLetterClick={onLetterClick}
-        onDeleteClick={onDeleteClick}
-      />
-    </div>
+    <KeyboardLetterList
+      allLetters={allLetters}
+      searchLetters={searchLetters}
+      searchedForAllLetters={searchedForAllLetters}
+      onLetterClick={onLetterClick}
+      onDeleteClick={onDeleteClick}
+    />
   );
 };
 

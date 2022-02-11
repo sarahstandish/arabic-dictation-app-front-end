@@ -1,9 +1,12 @@
+#input-form-container {
+    height: 80%;
+}
+
 .input-form {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 70%;
     justify-content: space-evenly;
     animation: fadeIn var(--default-fade-in-len);
   }
@@ -23,14 +26,25 @@ input {
     border: 2px solid var(--accent-color-2);
     background-color: var(--background-color);
     color: var(--accent-color-1);
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #keyboard-button {
     font-size: xx-large;
+    margin-top: 20px;
 }
 
-.hide-keyboard {
+#keyboard-container {
+    margin-top: 10px;
+}
+
+.hide-keyboard-button {
     text-decoration: line-through;
     text-decoration-color: maroon;
     text-decoration-thickness: 3px;
+}
+
+.keyboard-hidden {
+    visibility: hidden;
 }

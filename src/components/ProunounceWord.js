@@ -1,8 +1,8 @@
 import "./PronounceWord.css";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
-const PronounceWord = ({ currWord, visibility }) => {
+const PronounceWord = ({ currWord }) => {
   // audioplayer
   // useRef will give you the same object on every render
   // mutating the .current property doesn't cause a rerender
@@ -11,11 +11,6 @@ const PronounceWord = ({ currWord, visibility }) => {
   const playAudio = () => {
     audioPlayer.current.play();
   };
-
-  // the below does not work
-  // if (visibility.inputForm && audioPlayer) {
-  //   playAudio();
-  // }
 
   return (
     <div className="pronounce-word">
@@ -34,7 +29,6 @@ const PronounceWord = ({ currWord, visibility }) => {
 
 PronounceWord.propTypes = {
   currWord: PropTypes.object.isRequired,
-  visibility: PropTypes.object.isRequired,
 };
 
 export default PronounceWord;
