@@ -4,9 +4,6 @@
     --diacritic-color: var(--text-color);
 }
 
-/* light blue option: #008DB8 pretty promising */ 
-/* bright blue option: 2667FF */
-
 .correct {
     color: var(--correct-color)
 }

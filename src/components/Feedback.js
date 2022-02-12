@@ -2,6 +2,7 @@ import "./Feedback.css";
 import React from "react";
 import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
+import SimplifiedFeedbackWord from "./SimplifiedFeedbackWord";
 
 const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   const { unvoweled_word, voweled_word } = currWord;
@@ -98,6 +99,12 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
     }
   };
 
+  const UA = navigator.userAgent;
+  const isWebkit = /\b(iPad|iPhone|iPod)\b/.test(UA) && /WebKit/.test(UA);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(UA);
+
+  const simpleFeedback = isWebkit || isSafari;
+
   return (
     <div className="feedback">
       <p className="feedback-p evaluation">
@@ -105,11 +112,24 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
       </p>
       <div id="the-word-was">
         <p className="feedback-p">The word was</p>
-        {submittedWord && <FeedbackLetterList wordArr={getCorrectWordArr()} />}
+        {simpleFeedback && (
+          <SimplifiedFeedbackWord word={voweled_word} isCorrect={true} />
+        )}
+        {!simpleFeedback && submittedWord && (
+          <FeedbackLetterList wordArr={getCorrectWordArr()} />
+        )}
       </div>
       <div id="you-wrote">
         <p className="feedback-p">You wrote</p>
-        {submittedWord && <FeedbackLetterList wordArr={getFeedbackArr()} />}
+        {simpleFeedback && (
+          <SimplifiedFeedbackWord
+            word={submittedWord}
+            isCorrect={currWordCorrect()}
+          />
+        )}
+        {!simpleFeedback && submittedWord && (
+          <FeedbackLetterList wordArr={getFeedbackArr()} />
+        )}
       </div>
       <button
         className="button"
