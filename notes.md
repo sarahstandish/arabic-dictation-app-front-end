@@ -100,6 +100,7 @@ https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-uni
 https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 https://blog.maisie.ink/react-ref-autofocus/
 https://github.com/mars/create-react-app-buildpack#user-content-requires
+https://stackoverflow.com/questions/7069247/inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
 
 # To read
 
