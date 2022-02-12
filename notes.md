@@ -130,12 +130,7 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - Test out words: https://ttsmp3.com/faq
 
 # To Do - styles
-- Check mobile visibility
-- Check appearance across browsers
-- Make sure there is a 
 - Enlarge 'all letters' button
-- Check spacing of elements
-- Fix variable spacing of elements
 
 # Arabic font notes
   /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
