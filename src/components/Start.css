@@ -21,8 +21,8 @@ footer {
   border-top: 1px solid var(--text-color);
   width: 100%;
   display: block;
-  margin-top: auto;
-  /* max-height: 40px; */
+  /* margin-top: auto; */
+  max-height: 4px;
 }
 
 a {

@@ -108,6 +108,7 @@ inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
 https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_element_boundaries
  - Chrome explains that they solved this
  - This is a webkit problem
+ - Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=229361
  - use of zwj inside span tags, does not work on mobile
  - `<span className={feedback-letter arabic ${status}}>&zwj;{char}&zwj;</span>`
  - use of zwj outside span tags, breaks appearance on web, also doesn't work
@@ -123,9 +124,8 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - Add slower button or record all words more slowly
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
 - Remove word with id 401 مباراة very bad pronunciation!!
-- Delete word 4439 لِـ
+- Delete word 4439 لِـ لِـ
 - Check whether words with اً are still in the database
-- Check AllLettersButton onClick prop
 - Redo recordings with Amazon Polly https://docs.aws.amazon.com/polly/latest/dg/get-started-what-next.html
 - Test out words: https://ttsmp3.com/faq
 
