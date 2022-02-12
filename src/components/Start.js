@@ -28,6 +28,15 @@ const Start = ({ changeVisibility, focusHere }) => {
       >
         Start
       </button>
+      <footer>
+        <a
+          href="https://sarahstandish.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          About the creator
+        </a>
+      </footer>
     </div>
   );
 };

@@ -175,15 +175,6 @@ function App() {
           focusHere={focusHere}
         />
       )}
-      <footer>
-        <a
-          href="https://sarahstandish.github.io/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          About the creator
-        </a>
-      </footer>
     </div>
   );
 }

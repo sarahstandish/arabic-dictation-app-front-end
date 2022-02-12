@@ -100,9 +100,24 @@ https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-uni
 https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
 https://blog.maisie.ink/react-ref-autofocus/
 https://github.com/mars/create-react-app-buildpack#user-content-requires
-https://stackoverflow.com/questions/7069247/inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
+
+# Letter debugging
+https://stackoverflow.com/questions/7069247/
+inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
+ - this does not work
+https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_element_boundaries
+ - Chrome explains that they solved this
+ - This is a webkit problem
+ - use of zwj inside span tags, does not work on mobile
+ - `<span className={feedback-letter arabic ${status}}>&zwj;{char}&zwj;</span>`
+ - use of zwj outside span tags, breaks appearance on web, also doesn't work
+  - `<>`
+  - `&zwj;<span className={feedback-letter arabic ${status}}>{char}</span>`
+  - `&zwj;`
+  - `</>`
 
 # To read
+https://www.npmjs.com/package/react-device-detect
 
 # To Do - functionality
 - Add 'about' footer
