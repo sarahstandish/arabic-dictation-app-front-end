@@ -123,8 +123,6 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 # To Do - functionality
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
 - Check whether words with اً are still in the database
-- Redo recordings with Amazon Polly https://docs.aws.amazon.com/polly/latest/dg/get-started-what-next.html
-- Test out words: https://ttsmp3.com/faq
 - Remove words from worksheet
 
 # Deleted - must be removed from spreadsheet
