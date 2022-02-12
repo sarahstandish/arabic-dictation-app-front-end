@@ -34,6 +34,7 @@ const FeedbackLetterList = ({ wordArr }) => {
   // independent letters are not harmed by having a zwj after them
   // because there is just no way for them to connect after
   // they are only harmed by having one before them
+  // last letter cannot have a zwj after it
 
   const letterComponentList = wordArr.map((letter, index) => {
     return <FeedbackLetter key={index} letter={letter} />;
