@@ -121,16 +121,20 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
 
 # To Do - functionality
-- Add slower button or record all words more slowly
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
-- Remove word with id 401 مباراة very bad pronunciation!!
-- Delete word 4439 لِـ لِـ
 - Check whether words with اً are still in the database
 - Redo recordings with Amazon Polly https://docs.aws.amazon.com/polly/latest/dg/get-started-what-next.html
 - Test out words: https://ttsmp3.com/faq
+- Remove words from worksheet
+
+# Deleted - must be removed from spreadsheet
+- Remove word with id 401 مباراة very bad pronunciation!!
+- Delete word 4439 لِـ لِـ
+- All words with اً
+- ههه
+- خخخ
 
 # To Do - styles
-- Enlarge 'all letters' button
 
 # Arabic font notes
   /* --arabic-font: 'Scheherazade New', serif; Classic font, very graceful */
