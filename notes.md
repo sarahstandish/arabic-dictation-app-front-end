@@ -127,12 +127,11 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - Update images
 - Add Google analytics
 - Check SSL on Heroku
-- Add Favicon
-- Add Apple square icon
 - Add dictation app projects to personal portfolio site
 - Investigate error where first word audio doesn't autoplay on mobile
 - Add license to package.json
 - Remove button hover color from small screen
+- Set manifest.json
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!
