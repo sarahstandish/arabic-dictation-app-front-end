@@ -16,6 +16,18 @@
 }
 
 .selected {
-    background-color: var(--accent-color-1);
-    color: var(--background-color)
+    background-color: var(--accent-color-1) !important;
+    color: var(--background-color) !important
+}
+
+.not-selected {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+@media only screen and (max-width: 815px) {
+    .letter:hover {
+        color: var(--text-color);
+        background-color: var(--background-color)
+        }
 }
