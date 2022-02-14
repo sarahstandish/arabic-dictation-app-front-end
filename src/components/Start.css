@@ -22,7 +22,7 @@ footer {
   width: 100%;
   display: block;
   /* margin-top: auto; */
-  max-height: 4px;
+  max-height: 15px;
 }
 
 a {
@@ -30,7 +30,7 @@ a {
   text-decoration: none;
   font-family: var(--body-font);
   color: var(--text-color);
-  line-height: 40px;
+  line-height: 15px;
 }
 
 a:hover {
