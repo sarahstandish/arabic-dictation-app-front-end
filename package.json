@@ -1,6 +1,8 @@
 {
   "name": "arabic-dictation-app-front-end",
-  "version": "0.1.0",
+  "description": "A tool for students to practice the Arabic alphabet through dictation",
+  "repository": "https://github.com/sarahstandish/arabic-dictation-app-front-end",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -35,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://arabic-dictation-app.herokuapp.com/",
+  "license": "CC-BY-NC-4.0",
+  "contributors": ["Sarah <standish.sm@gmail.com> (https://sarahstandish.github.io)"],
+  "keywords": ["arabic", "education"]
 }
