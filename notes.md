@@ -124,13 +124,10 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
 - Check whether words with اً are still in the database
 - Remove عندئذ from the database
-- Update images
 - Add Google analytics
 - Add dictation app projects to personal portfolio site
 - Investigate error where first word audio doesn't autoplay on mobile
-- Add license to package.json
 - Remove button hover color from small screen
-- Set manifest.json
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!
