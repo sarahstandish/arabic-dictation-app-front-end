@@ -122,11 +122,8 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 
 # To Do - functionality
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
-- Check whether words with اً are still in the database
-- Remove عندئذ from the database
 - Add Google analytics
-- Add dictation app projects to personal portfolio site
-- Investigate error where first word audio doesn't autoplay on mobile
+- Investigate error where first word audio doesn't autoplay on mobile ???
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!
@@ -134,6 +131,9 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 - All words with اً
 - ههه
 - خخخ
+- عندئذ
+- حينئذ
+- سامٍ
 
 # To Do - styles
 

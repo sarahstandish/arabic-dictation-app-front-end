@@ -1,10 +1,11 @@
 import "./App.css";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import DictationForm from "./components/DictationForm";
 import Start from "./components/Start";
 import MenuForm from "./components/MenuForm";
 import axios from "axios";
 import ErrorScreen from "./components/ErrorScreen";
+import ReactGA from "react-ga";
 
 function App() {
   // the array words of words that will be given to the user
@@ -133,6 +134,12 @@ function App() {
     if (inputElement) {
       inputElement.focus();
     }
+  }, []);
+
+  // google analytics
+  ReactGA.initialize("UA-220361189-1");
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
   }, []);
 
   return (
