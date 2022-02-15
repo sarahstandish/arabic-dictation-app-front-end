@@ -1,6 +1,9 @@
 # Arabic Dictation App
 Arabic Dictation App is a tool for Arabic learners to practice the Arabic alphabet. The app is hosted at (https://arabic-dictation-app.herokuapp.com/)
 
+## Author
+This app was created by [Sarah Standish](https://github.com/sarahstandish/)
+
 ## Major features
 - Users can select the letters of the alphabet they know or want to practice.  
 - The app will fetch a list of words that contain only those letters from the [back-end API](https://github.com/sarahstandish/arabic-dictation-app-backend), and present them to the user one by one.  The database contains more than 5000 Arabic words drawn from [A Frequency Dictionary of Arabic: Core Vocabulary for Learners](https://www.goodreads.com/book/show/4805313-a-frequency-dictionary-of-arabic).
