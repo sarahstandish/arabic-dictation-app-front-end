@@ -36,5 +36,14 @@ I completed this project as my final capstone project during my time at [Ada Dev
 - OCR input: My original dream for this project was to accept handwritten input on a touchscreen which would be evaluated via OCR.  At the time of this project, I was unable to find an OCR API, library, or model that was freely available and would produce reliable results with Arabic input.  For an educational product, it would be very important for this feature to be highly reliable in order to give accurate feedback to users.  While I do not foresee having the time available in the future to make majore changes or improvements to this project, if free Arabic OCR resources improve in the future, this would be a nice feature to add.
 - Re-record audio: A more likely future development would be to re-record the existing audio repeatedly with newer and ever-more-accurate Arabic text-to-speech APIs.
 
+## Tech stack
+- Database: [PostgreSQL](https://www.postgresql.org/)
+- [Backend](https://github.com/sarahstandish/arabic-dictation-app-backend): [Python](https://www.python.org/), [Flask](https://palletsprojects.com/p/flask/)
+- [Frontend](https://github.com/sarahstandish/arabic-dictation-app-front-end): [React](https://reactjs.org/), [JavaScript](https://www.javascript.com/), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), (CSS)[https://www.w3.org/Style/CSS/Overview.en.html]
+- Fonts: [Google Fonts](https://fonts.google.com/)
+- Web hosting: [Heroku](https://www.heroku.com/)
+- Text-to-speech: [AWS Polly](https://aws.amazon.com/polly/)
+- Audio file hosting: [Google Cloud Storage](https://cloud.google.com/storage)
+
 ## License
 [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en_GB)
