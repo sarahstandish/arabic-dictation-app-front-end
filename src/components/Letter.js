@@ -2,6 +2,7 @@ import "./Letter.css";
 import React from "react";
 import PropTypes from "prop-types";
 
+// a letter button that appears in the menu component
 const Letter = ({ letter, selectLetter, selected }) => {
   return (
     <li

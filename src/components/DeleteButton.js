@@ -2,6 +2,7 @@ import "./DeleteButton.css";
 import React from "react";
 import PropTypes from "prop-types";
 
+// a delete button for the on-screen keyboard
 const DeleteButton = ({ onDeleteClick }) => {
   return (
     <li className="keyboard-letter" id="delete" onClick={onDeleteClick}>

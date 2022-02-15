@@ -5,6 +5,9 @@ import InputForm from "./InputForm";
 import Feedback from "./Feedback";
 import PropTypes from "prop-types";
 
+// a component to contain everything that's involved in the dictation
+// from playing the audio file
+// to getting user input
 const DictationForm = ({
   visibility,
   changeVisibility,

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Keyboard from "./Keyboard";
 
+// the form where the user enters the word they hear
 const InputForm = ({
   updateSubmittedWord,
   changeVisibility,
@@ -30,7 +31,7 @@ const InputForm = ({
       return true;
     }
 
-    // check for non-arabic characters
+    // cannot submit non-arabic characters
     const lowestArabicCodePoint = parseInt("0600", 16);
 
     const highestArabicCodePoint = parseInt("06FF", 16);
@@ -48,7 +49,6 @@ const InputForm = ({
   };
 
   const onKeyboardButtonClick = (event) => {
-    console.log("They keyboard button was clicked.");
     if (visibility.keyboard) {
       changeVisibility({ keyboard: false });
     } else {
@@ -89,6 +89,8 @@ const InputForm = ({
           type="text"
           value={userInput}
           onChange={changeUserInput}
+          // focus on the input form if the onscreen keyboard is invisible
+          // this enables the user to immediately start typing
           ref={!visibility.keyboard ? focusHere : null}
         ></input>
         <button

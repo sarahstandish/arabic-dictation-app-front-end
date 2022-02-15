@@ -2,6 +2,8 @@ import "./AllLettersButton.css";
 import React from "react";
 import PropTypes from "prop-types";
 
+// a button to select all letters
+// in the letter menu form
 const AllLettersButton = ({ selectAllLetters, allLettersSelected }) => {
   const selected = allLettersSelected ? "selected" : "not-selected";
 

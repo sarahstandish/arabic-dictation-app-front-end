@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import FeedbackLetterList from "./FeedbackLetterList";
 import SimplifiedFeedbackWord from "./SimplifiedFeedbackWord";
 
+// a component that displays feedback to the user
 const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
@@ -14,6 +15,7 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   const getFeedbackArr = () => {
     const feedbackArr = [];
 
+    // if the submitted word is shorter, add blank lines to the end of the word
     if (submittedWord.length < unvoweled_word.length) {
       const diff = unvoweled_word.length - submittedWord.length;
       for (let i = 0; i < diff; i++) {
@@ -21,6 +23,7 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
       }
     }
 
+    // check each character for correctness, and set status accordingly
     for (let i = 0; i < unvoweled_word.length; i++) {
       let correctChar = unvoweled_word[i];
       let sumbittedChar = submittedWord[i];
@@ -37,6 +40,8 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
       }
     }
 
+    // if the submitted word is longer than the actual word
+    // mark the rest of the letters as incorrect
     if (submittedWord.length > unvoweled_word.length) {
       for (let i = unvoweled_word.length; i < submittedWord.length; i++) {
         let sumbittedChar = submittedWord[i];
@@ -51,6 +56,8 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   };
 
   const getCorrectWordArr = () => {
+    // color-code diacritics
+    // this is not visible on all browsers and mainly works on Firefox
     const diacritics = new Set([
       "\u0650", // kesra
       "\u064F", // damma
@@ -77,6 +84,7 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   };
 
   const getEvaluation = () => {
+    // return a simple evaluation of how the user did
     if (currWordCorrect()) {
       return "Perfect!";
     }
@@ -84,6 +92,7 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
     const feedbackArr = getFeedbackArr();
     let incorrect = 0;
 
+    // count the number of incorrect letters
     for (let letter of feedbackArr) {
       if (letter.status === "incorrect") {
         incorrect += 1;
@@ -98,11 +107,13 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
       return "Partly there.";
     }
   };
-
+  // check the user's browser
+  // this is considered hacky but seems to be the only way around it
   const UA = navigator.userAgent;
   const isWebkit = /\b(iPad|iPhone|iPod)\b/.test(UA) && /WebKit/.test(UA);
   const isSafari = /^((?!chrome|android).)*safari/i.test(UA);
 
+  // return simplified feedback on iOs or Safari, which will not accept html interpolated between Arabic letters
   const simpleFeedback = isWebkit || isSafari;
 
   return (

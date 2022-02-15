@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import KeyboardLetterList from "./KeyboardLetterList";
 
+// component that displays an on-screen keyboard
 const Keyboard = ({
   searchLetters,
   searchedForAllLetters,
