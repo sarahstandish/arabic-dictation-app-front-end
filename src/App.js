@@ -26,6 +26,7 @@ function App() {
   // whether or not the user searched for all letters on their last search
   const [searchedForAllLetters, setSearchedForAllLetters] = useState(false);
 
+  // whether or not the words are being loaded from the api
   const [loading, setLoading] = useState(false);
 
   // visibility of each component
@@ -89,6 +90,7 @@ function App() {
       });
   };
 
+  // get the next word after the user has reviewed the feedback and pressed 'next'
   const getNextWord = (currWordCorrect) => {
     let wordsCopy = [...words];
 
@@ -122,14 +124,12 @@ function App() {
   const changeVisibility = (componentsObj) => {
     const visibilityCopy = { ...visibility };
     for (let component of Object.keys(componentsObj)) {
-      // console.log(
-      //   `Changing the visibility of ${component} from ${visibilityCopy[component]} to ${componentsObj[component]}`
-      // );
       visibilityCopy[component] = componentsObj[component];
     }
     setVisibility(visibilityCopy);
   };
 
+  // put the focus on a button or element so the user can navigate via the keyboard
   const focusHere = useCallback((inputElement) => {
     if (inputElement) {
       inputElement.focus();
