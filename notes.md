@@ -123,7 +123,6 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 # To Do - functionality
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
 - Add Google analytics
-- Investigate error where first word audio doesn't autoplay on mobile ???
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!

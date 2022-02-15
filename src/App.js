@@ -7,6 +7,9 @@ import axios from "axios";
 import ErrorScreen from "./components/ErrorScreen";
 import ReactGA from "react-ga";
 
+// google analytics
+ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE);
+
 function App() {
   // the array words of words that will be given to the user
   const [words, setWords] = useState([]);
@@ -136,10 +139,9 @@ function App() {
     }
   }, []);
 
-  // google analytics
-  ReactGA.initialize("UA-220361189-1");
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
+    console.log("Use effect fired");
   }, []);
 
   return (
