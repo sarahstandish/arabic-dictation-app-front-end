@@ -1,5 +1,5 @@
 # Arabic Dictation App
-Arabic Dictation App is a tool for Arabic learners to practice the Arabic alphabet. The app is hosted at (https://arabic-dictation-app.herokuapp.com/)
+Arabic Dictation App is a tool for Arabic learners to practice the Arabic alphabet. View the live web app [here](https://arabic-dictation-app.herokuapp.com/)
 
 ## Author
 This app was created by [Sarah Standish](https://github.com/sarahstandish/)
@@ -14,7 +14,6 @@ This app was created by [Sarah Standish](https://github.com/sarahstandish/)
 - The app checks what the user entered against the correct spelling of the word and presents color-coded feedback to the user.
 
 ## Minor features
-Minor features include:
 - Keyboard control: 'Focus' on specific components so that desktop users can advance through a cycle of input - feedback - input using only keyboard input.  However, 'focus' on the input box is disabled when the user has the onscreen keyboard open in order to prevent a mobile device keyboard from popping up.
 - Repetitive word fetching: The app fetches 10 words at a time from the API.  When the user has exhausted those ten words, another ten words are fetched.  
 - Word recycling: When a user gets a word wrong, the word is added to the end of the list of words to be presented to the user.  The user will keep seeing that word repeated until they are able to enter it correctly.
