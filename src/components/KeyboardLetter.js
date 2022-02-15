@@ -2,6 +2,7 @@ import "./KeyboardLetter.css";
 import React from "react";
 import PropTypes from "prop-types";
 
+// a letter in the key board component
 const KeyBoardLetter = ({ letter, searchedForClass, onLetterClick }) => {
   return (
     <li

@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import KeyBoardLetter from "./KeyboardLetter";
 import DeleteButton from "./DeleteButton";
 
+// component that contains the keyboard letters
+// letters that the user searched for are highlighted differently that those the user did not search for
 const KeyboardLetterList = ({
   searchLetters,
   searchedForAllLetters,

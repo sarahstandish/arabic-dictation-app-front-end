@@ -2,6 +2,7 @@ import "./ErrorScreen.css";
 import React from "react";
 import PropTypes from "prop-types";
 
+// a screen to display error
 const ErrorScreen = ({ error, changeVisibility, focusHere }) => {
   return (
     <div className="error-screen">
