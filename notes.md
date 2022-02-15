@@ -108,7 +108,7 @@ inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
 https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_element_boundaries
  - Chrome explains that they solved this
  - This is a webkit problem
- - Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=229361
+ - Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=6148
  - use of zwj inside span tags, does not work on mobile
  - `<span className={feedback-letter arabic ${status}}>&zwj;{char}&zwj;</span>`
  - use of zwj outside span tags, breaks appearance on web, also doesn't work
