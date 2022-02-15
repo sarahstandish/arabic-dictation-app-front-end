@@ -39,7 +39,7 @@ I completed this project as my final capstone project during my time at [Ada Dev
 ## Tech stack
 - Database: [PostgreSQL](https://www.postgresql.org/)
 - [Backend](https://github.com/sarahstandish/arabic-dictation-app-backend): [Python](https://www.python.org/), [Flask](https://palletsprojects.com/p/flask/)
-- [Frontend](https://github.com/sarahstandish/arabic-dictation-app-front-end): [React](https://reactjs.org/), [JavaScript](https://www.javascript.com/), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), (CSS)[https://www.w3.org/Style/CSS/Overview.en.html]
+- [Frontend](https://github.com/sarahstandish/arabic-dictation-app-front-end): [React](https://reactjs.org/), [JavaScript](https://www.javascript.com/), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - Fonts: [Google Fonts](https://fonts.google.com/)
 - Web hosting: [Heroku](https://www.heroku.com/)
 - Text-to-speech: [AWS Polly](https://aws.amazon.com/polly/)
