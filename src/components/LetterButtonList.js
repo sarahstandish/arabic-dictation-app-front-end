@@ -4,7 +4,8 @@ import Letter from "./Letter.js";
 import PropTypes from "prop-types";
 import AllLettersButton from "./AllLettersButton";
 
-const LetterList = ({
+// component containing all letter buttons in the letter selection menu
+const LetterButtonList = ({
   selectLetter,
   selectedLetters,
   selectAllLetters,
@@ -40,7 +41,7 @@ const LetterList = ({
   );
 };
 
-LetterList.propTypes = {
+LetterButtonList.propTypes = {
   selectLetter: PropTypes.func.isRequired,
   selectedLetters: PropTypes.object.isRequired,
   selectAllLetters: PropTypes.func.isRequired,
@@ -48,4 +49,4 @@ LetterList.propTypes = {
   allLetters: PropTypes.object.isRequired,
 };
 
-export default LetterList;
+export default LetterButtonList;
