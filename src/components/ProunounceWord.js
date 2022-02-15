@@ -3,9 +3,8 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
 const PronounceWord = ({ currWord }) => {
-  // audioplayer
-  // useRef will give you the same object on every render
-  // mutating the .current property doesn't cause a rerender
+  // plays the audio file for the current word on load
+  // plays again on click
   const audioPlayer = useRef();
 
   const playAudio = () => {

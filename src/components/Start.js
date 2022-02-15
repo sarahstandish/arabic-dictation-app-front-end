@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Start = ({ changeVisibility, focusHere }) => {
+  // the page the user starts on
   return (
     <div className="start">
       <p className="app-description directions">

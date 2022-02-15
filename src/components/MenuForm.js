@@ -12,6 +12,7 @@ const MenuForm = ({
   searchLetters,
   searchedForAllLetters,
 }) => {
+  // a menu for the user to select the letters they want to practice
   const allLetters = new Set([
     "\u0627", // alif
     "\u0628", // baa
@@ -83,9 +84,11 @@ const MenuForm = ({
   };
 
   const selectAllLetters = () => {
+    // select all letters
     if (!allLettersSelected) {
       setSelectedLetters(allLetters);
     } else {
+      // clear the selected letters
       setSelectedLetters(new Set());
     }
 
@@ -101,11 +104,13 @@ const MenuForm = ({
         (str, curr) => (str += curr)
       );
     }
+    // fetch words from database
     getWords(letters);
   };
 
   const validSelection = () => selectedLetters.size >= 3;
 
+  // set a class that will fade the menu out
   const fadeOutTime = loading ? "time-to-fade" : null;
 
   return (
