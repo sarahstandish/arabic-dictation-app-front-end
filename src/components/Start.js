@@ -19,7 +19,7 @@ const Start = ({ changeVisibility, focusHere }) => {
       </p>
       <i className="far fa-keyboard"></i>
       <p className="app-description directions">
-        Recieve feedback on your attempt, and retry words you got wrong.
+        Receive feedback on your attempt, and retry words you got wrong.
       </p>
       <button
         onClick={() => changeVisibility({ start: false, menuForm: true })}
