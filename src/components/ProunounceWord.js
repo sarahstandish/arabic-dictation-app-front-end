@@ -6,6 +6,10 @@ const PronounceWord = ({ currWord }) => {
   // audioplayer
   // useRef will give you the same object on every render
   // mutating the .current property doesn't cause a rerender
+  const UA = navigator.userAgent;
+  const isIOS = /\b(iPad|iPhone|iPod)\b/.test(UA) && /WebKit/.test(UA);
+  // const isSafari = /^((?!chrome|android).)*safari/i.test(UA);
+
   const audioPlayer = useRef();
 
   const playAudio = () => {
