@@ -13,7 +13,12 @@ const PronounceWord = ({ currWord }) => {
   const audioPlayer = useRef();
 
   const playAudio = () => {
-    audioPlayer.current.play();
+    if (isIOS) {
+      const reloadAudio = new Audio(currWord.audio_file);
+      reloadAudio.play();
+    } else {
+      audioPlayer.current.play();
+    }
   };
 
   return (

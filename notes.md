@@ -108,7 +108,7 @@ inserting-html-tag-in-the-middle-of-arabic-word-breaks-word-connection-cursive
 https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_element_boundaries
  - Chrome explains that they solved this
  - This is a webkit problem
- - Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=6148
+ - Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=229361
  - use of zwj inside span tags, does not work on mobile
  - `<span className={feedback-letter arabic ${status}}>&zwj;{char}&zwj;</span>`
  - use of zwj outside span tags, breaks appearance on web, also doesn't work
@@ -122,11 +122,11 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 
 # To Do - functionality
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
-- Fix delay on Safari
-- `const AudioContext = window.AudioContext || window.webkitAudioContext;`
-`const audioCtx = new AudioContext();`
-- https://stackoverflow.com/questions/9811429/html5-audio-tag-on-safari-has-a-delay
-- Accept correct voweled word answer
+- Add voweled word as a correct option
+- Fix audio issue where first letter is cut off on iOS 
+
+# Audio troubleshooting
+https://stackoverflow.com/questions/67629761/how-to-stop-safari-clipping-fractions-of-time-off-audio-on-second-play
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!
