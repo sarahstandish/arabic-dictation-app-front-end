@@ -9,14 +9,24 @@ const Feedback = ({ currWord, submittedWord, getNextWord, focusHere }) => {
   const { unvoweled_word, voweled_word } = currWord;
 
   const currWordCorrect = () => {
-    return submittedWord === unvoweled_word;
+    return submittedWord === unvoweled_word || submittedWord === voweled_word;
   };
 
   const getFeedbackArr = () => {
     const feedbackArr = [];
 
-    // if the submitted word is shorter, add blank lines to the end of the word
+    // if current word is correct, add each item to the array
+    if (currWordCorrect()) {
+      for (let sumbittedChar of submittedWord) {
+        feedbackArr.push({
+          char: sumbittedChar,
+          status: "correct",
+        });
+      }
+      return feedbackArr;
+    }
     if (submittedWord.length < unvoweled_word.length) {
+      // if the submitted word is shorter, add blank lines to the end of the word
       const diff = unvoweled_word.length - submittedWord.length;
       for (let i = 0; i < diff; i++) {
         submittedWord += "_";
