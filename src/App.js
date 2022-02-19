@@ -141,7 +141,6 @@ function App() {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
-    console.log("Use effect fired");
   }, []);
 
   return (

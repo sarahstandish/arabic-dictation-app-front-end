@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Start = ({ changeVisibility, focusHere }) => {
+  // the page the user starts on
   return (
     <div className="start">
       <p className="app-description directions">
@@ -18,7 +19,7 @@ const Start = ({ changeVisibility, focusHere }) => {
       </p>
       <i className="far fa-keyboard"></i>
       <p className="app-description directions">
-        Recieve feedback on your attempt, and retry words you got wrong.
+        Receive feedback on your attempt, and retry words you got wrong.
       </p>
       <button
         onClick={() => changeVisibility({ start: false, menuForm: true })}
