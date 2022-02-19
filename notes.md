@@ -122,6 +122,11 @@ https://developers.google.com/web/updates/2019/06/layoutNG#joining_across_elemen
 
 # To Do - functionality
 - Low priority bug fix: If 'words' is empty and 'morewordsavailable' is false and the user gets the current word wrong, the user will be instructed to search for more words without retrying that word
+- Fix delay on Safari
+- `const AudioContext = window.AudioContext || window.webkitAudioContext;`
+`const audioCtx = new AudioContext();`
+- https://stackoverflow.com/questions/9811429/html5-audio-tag-on-safari-has-a-delay
+- Accept correct voweled word answer
 
 # Deleted
 - Remove word with id 401 مباراة very bad pronunciation!!
