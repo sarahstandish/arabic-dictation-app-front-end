@@ -30,6 +30,9 @@ const Start = ({ changeVisibility, focusHere }) => {
         Start
       </button>
       <footer>
+        <a href="https://jusuurtextbook.com/" target="_blank" rel="noreferrer">
+          Jusuur textbook
+        </a>
         <a
           href="https://sarahstandish.github.io/"
           target="_blank"

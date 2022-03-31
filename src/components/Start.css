@@ -20,9 +20,13 @@
 footer {
   border-top: 1px solid var(--text-color);
   width: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   /* margin-top: auto; */
-  max-height: 15px;
+  /* max-height: 30px; */
+  padding-top: 3px;
+  padding-bottom: 5px;
 }
 
 a {
@@ -30,7 +34,7 @@ a {
   text-decoration: none;
   font-family: var(--body-font);
   color: var(--text-color);
-  line-height: 15px;
+  line-height: 30px;
 }
 
 a:hover {
