@@ -40,3 +40,16 @@ a {
 a:hover {
   cursor: pointer;
 }
+
+@media only screen and (min-height: 700px) {
+  footer {
+    /* margin-top: auto; */
+    max-height: 30px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    line-height: 15px;
+    padding-top: 5px;
+  }
+}
